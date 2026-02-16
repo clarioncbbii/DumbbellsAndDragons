@@ -1,6 +1,6 @@
 import { Sword, Zap, Trophy, TrendingUp, Users, Target } from 'lucide-react';
 import Link from 'next/link';
-import SignInBar from './components/SignInBar/SignInBar';
+import SignInBar from '@/components/SignInBar/SignInBar';
 import './page.css';
 import Image from "next/image";
 

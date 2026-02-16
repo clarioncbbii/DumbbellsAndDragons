@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { mockProgram, getWeek } from '@/app/lib/mockData';
-import ProgramHeader from '../components/program/ProgramHeader';
-import WeekOverview from '../components/program/WeekOverview';
-import DayCard from '../components/program/DayCard';
+import ProgramHeader from '@/components/program/ProgramHeader';
+import WeekOverview from '@/components/program/WeekOverview';
+import DayCard from '@/components/program/DayCard';
 import './program.css';
 
 export default function ProgramPage() {
