@@ -1,0 +1,75 @@
+/* P Wrapper */
+.page_wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a0e14, #0f172a, #0a0e14);
+  color: white;
+}
+
+.hero_section {
+  position: relative;
+  padding: 3rem 1rem 3rem;
+  overflow: hidden;
+}
+
+.hero_container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.hero_content {
+  text-align: center;
+  align-self: center;
+  margin-bottom: 15vh;
+}
+
+.hero_title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero_title_gradient {
+  background: linear-gradient(to right, #10b981, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient_blob {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+.hero_description {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@layer clerk;
+
+.btn_primary {
+  padding: 0.5rem 2rem;
+  background: linear-gradient(to right, #10b981, #059669);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+  &:hover {
+    background: linear-gradient(to left, #16bb84, #059669);
+  }
+}

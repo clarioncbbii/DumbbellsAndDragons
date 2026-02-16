@@ -31,13 +31,13 @@
 .gradient-blob-1 {
   top: 25%;
   left: 25%;
-  background: rgba(16, 185, 129, 0.1);  
+  background: rgba(16, 185, 129, 0.1);
 }
 
 .gradient-blob-2 {
   bottom: 25%;
   right: 25%;
- background: rgba(5, 150, 105, 0.1);
+  background: rgba(5, 150, 105, 0.1);
 }
 
 .hero-container {
@@ -222,7 +222,6 @@
   font-weight: 700;
 }
 
-
 .section {
   padding: 5rem 1rem;
 }
@@ -266,7 +265,6 @@
 .glass-card:hover {
   border-color: rgba(251, 255, 12, 0.868);
 }
-
 
 .steps-grid {
   display: grid;
@@ -480,7 +478,11 @@
 /* CTA Section */
 .cta-container {
   text-align: center;
-  background: linear-gradient(to bottom right, rgba(16, 188, 10, 0.2), rgba(168, 85, 247, 0.2));
+  background: linear-gradient(
+    to bottom right,
+    rgba(16, 188, 10, 0.2),
+    rgba(168, 85, 247, 0.2)
+  );
   border: 1px solid rgba(168, 85, 247, 0.5);
   /* left the border purple and i quite like contrast --------------------------------- could maybe be the colour scheme. */
   padding: 3rem;
@@ -580,7 +582,7 @@
   .hero-buttons {
     flex-direction: row;
   }
-  
+
   .character-preview {
     flex-direction: row;
   }
@@ -590,19 +592,19 @@
   .steps-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .class-selector {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .class-showcase-content {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .footer-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -612,7 +614,7 @@
   .hero-title {
     font-size: 5rem;
   }
-  
+
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -622,11 +624,11 @@
   .hero-title {
     font-size: 3rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .cta-title {
     font-size: 2rem;
   }

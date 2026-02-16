@@ -20,18 +20,21 @@ export default function LandingPage() {
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              <span className="hero-title-gradient"> Level Up <br />
-  Your Fitness</span>
+              <span className="hero-title-gradient">
+                {" "}
+                Level Up <br />
+                Your Fitness
+              </span>
             </h1>
             <p className="hero-description">
-              Transform your workouts into an epic RPG adventure. Choose your class, earn XP,
-              and watch your character grow stronger with every rep.
+              Transform your workouts into an epic RPG adventure. Choose your
+              class, earn XP, and watch your character grow stronger with every
+              rep.
             </p>
             <div className="hero-buttons">
               <Link href="/sign-up" className="btn-primary">
                 Start Your Quest
               </Link>
-              
             </div>
           </div>
 
@@ -57,7 +60,7 @@ export default function LandingPage() {
                       <span className="xp-value">850 / 1200</span>
                     </div>
                     <div className="xp-bar-container">
-                      <div className="xp-bar" style={{ width: '70%' }} />
+                      <div className="xp-bar" style={{ width: "70%" }} />
                     </div>
                   </div>
                   <div className="stats-grid">
@@ -86,7 +89,9 @@ export default function LandingPage() {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">How It Works</h2>
-            <p className="section-description">Three simple steps to transform your fitness</p>
+            <p className="section-description">
+              Three simple steps to transform your fitness
+            </p>
           </div>
 
           <div className="steps-grid">
@@ -95,7 +100,8 @@ export default function LandingPage() {
               <div className="step-number">01</div>
               <h3 className="step-title">Choose Your Class</h3>
               <p className="step-description">
-                Pick a character class that matches your fitness goals and training style.
+                Pick a character class that matches your fitness goals and
+                training style.
               </p>
             </div>
 
@@ -113,7 +119,8 @@ export default function LandingPage() {
               <div className="step-number">03</div>
               <h3 className="step-title">Level Up</h3>
               <p className="step-description">
-                Gain levels, unlock achievements, and see your character grow stronger.
+                Gain levels, unlock achievements, and see your character grow
+                stronger.
               </p>
             </div>
           </div>
@@ -124,7 +131,9 @@ export default function LandingPage() {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Choose Your Path</h2>
-            <p className="section-description">Each class offers unique training programs and progression</p>
+            <p className="section-description">
+              Each class offers unique training programs and progression
+            </p>
           </div>
 
           {/* Class Cards - Static for now we can add modals later or pages /about ... something to discuss */}
@@ -138,7 +147,9 @@ export default function LandingPage() {
   /></div>
               <h3 className="class-name">Barbarian</h3>
               <p className="class-tagline">Master of Raw Strength</p>
-              <p className="class-description">Dominate with heavy compound lifts and progressive overload</p>
+              <p className="class-description">
+                Dominate with heavy compound lifts and progressive overload
+              </p>
             </div>
 
             <div className="class-card glass-card">
@@ -150,7 +161,9 @@ export default function LandingPage() {
   /></div>
               <h3 className="class-name">Rogue</h3>
               <p className="class-tagline">Agility & Control</p>
-              <p className="class-description">Master bodyweight movements and calisthenics</p>
+              <p className="class-description">
+                Master bodyweight movements and calisthenics
+              </p>
             </div>
 
             <div className="class-card glass-card">
@@ -162,7 +175,9 @@ export default function LandingPage() {
   /></div>
               <h3 className="class-name">Paladin</h3>
               <p className="class-tagline">Balanced Warrior</p>
-              <p className="class-description">Combine strength training with endurance work</p>
+              <p className="class-description">
+                Combine strength training with endurance work
+              </p>
             </div>
           </div>
 
@@ -179,9 +194,15 @@ export default function LandingPage() {
               <div className="class-showcase-info">
                 <h4 className="showcase-title">Training Focus:</h4>
                 <ul className="showcase-list">
-                  <li><span className="showcase-bullet">▸</span> Heavy Squats</li>
-                  <li><span className="showcase-bullet">▸</span> Deadlifts</li>
-                  <li><span className="showcase-bullet">▸</span> Bench Press</li>
+                  <li>
+                    <span className="showcase-bullet">▸</span> Heavy Squats
+                  </li>
+                  <li>
+                    <span className="showcase-bullet">▸</span> Deadlifts
+                  </li>
+                  <li>
+                    <span className="showcase-bullet">▸</span> Bench Press
+                  </li>
                 </ul>
               </div>
               <div className="class-showcase-stats">
@@ -189,19 +210,28 @@ export default function LandingPage() {
                 <div className="showcase-stat">
                   <span>Strength</span>
                   <div className="showcase-bar-bg">
-                    <div className="showcase-bar barbarian-gradient" style={{ width: '95%' }} />
+                    <div
+                      className="showcase-bar barbarian-gradient"
+                      style={{ width: "95%" }}
+                    />
                   </div>
                 </div>
                 <div className="showcase-stat">
                   <span>Stamina</span>
                   <div className="showcase-bar-bg">
-                    <div className="showcase-bar barbarian-gradient" style={{ width: '60%' }} />
+                    <div
+                      className="showcase-bar barbarian-gradient"
+                      style={{ width: "60%" }}
+                    />
                   </div>
                 </div>
                 <div className="showcase-stat">
                   <span>Agility</span>
                   <div className="showcase-bar-bg">
-                    <div className="showcase-bar barbarian-gradient" style={{ width: '40%' }} />
+                    <div
+                      className="showcase-bar barbarian-gradient"
+                      style={{ width: "40%" }}
+                    />
                   </div>
                 </div>
               </div>
@@ -215,7 +245,9 @@ export default function LandingPage() {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Epic Features</h2>
-            <p className="section-description">Everything you need to gamify your fitness journey</p>
+            <p className="section-description">
+              Everything you need to gamify your fitness journey
+            </p>
           </div>
 
           <div className="features-grid">
@@ -225,7 +257,8 @@ export default function LandingPage() {
               </div>
               <h3 className="feature-title">XP System</h3>
               <p className="feature-description">
-                Every rep counts. Turn your workouts into experience points and watch your character grow.
+                Every rep counts. Turn your workouts into experience points and
+                watch your character grow.
               </p>
             </div>
 
@@ -235,7 +268,8 @@ export default function LandingPage() {
               </div>
               <h3 className="feature-title">Custom Programs</h3>
               <p className="feature-description">
-                Get a training program tailored to your class with progressive overload built in.
+                Get a training program tailored to your class with progressive
+                overload built in.
               </p>
             </div>
 
@@ -245,7 +279,8 @@ export default function LandingPage() {
               </div>
               <h3 className="feature-title">Achievements</h3>
               <p className="feature-description">
-                Unlock badges, equipment, and titles as you hit milestones and build consistency.
+                Unlock badges, equipment, and titles as you hit milestones and
+                build consistency.
               </p>
             </div>
 
@@ -255,7 +290,8 @@ export default function LandingPage() {
               </div>
               <h3 className="feature-title">Track Progress</h3>
               <p className="feature-description">
-                Visualize your gains with detailed stats, charts, and workout history.
+                Visualize your gains with detailed stats, charts, and workout
+                history.
               </p>
             </div>
 
@@ -265,7 +301,8 @@ export default function LandingPage() {
               </div>
               <h3 className="feature-title">Join the Quest</h3>
               <p className="feature-description">
-                Be part of a community transforming their fitness journey into an epic adventure.
+                Be part of a community transforming their fitness journey into
+                an epic adventure.
               </p>
             </div>
 
@@ -275,7 +312,8 @@ export default function LandingPage() {
               </div>
               <h3 className="feature-title">Level Up</h3>
               <p className="feature-description">
-                Each workout brings you closer to your next level. Watch your character evolve.
+                Each workout brings you closer to your next level. Watch your
+                character evolve.
               </p>
             </div>
           </div>
@@ -308,35 +346,58 @@ export default function LandingPage() {
                 <div className="footer-logo-icon">⚔️</div>
                 <span className="footer-logo-text">Dumbbells & Dragons</span>
               </div>
-              <p className="footer-tagline">Level up your fitness with RPG mechanics</p>
+              <p className="footer-tagline">
+                Level up your fitness with RPG mechanics
+              </p>
             </div>
             <div className="footer-section">
               <h4 className="footer-heading">Product</h4>
               <ul className="footer-links">
-                <li><Link href="#">Features</Link></li>
-                <li><Link href="#">Classes</Link></li>
-                <li><Link href="#">Pricing</Link></li>
+                <li>
+                  <Link href="#">Features</Link>
+                </li>
+                <li>
+                  <Link href="#">Classes</Link>
+                </li>
+                <li>
+                  <Link href="#">Pricing</Link>
+                </li>
               </ul>
             </div>
             <div className="footer-section">
               <h4 className="footer-heading">Company</h4>
               <ul className="footer-links">
-                <li><Link href="#">About</Link></li>
-                <li><Link href="#">Blog</Link></li>
-                <li><Link href="#">Careers</Link></li>
+                <li>
+                  <Link href="#">About</Link>
+                </li>
+                <li>
+                  <Link href="#">Blog</Link>
+                </li>
+                <li>
+                  <Link href="#">Careers</Link>
+                </li>
               </ul>
             </div>
             <div className="footer-section">
               <h4 className="footer-heading">Legal</h4>
               <ul className="footer-links">
-                <li><Link href="#">Privacy</Link></li>
-                <li><Link href="#">Terms</Link></li>
-                <li><Link href="#">Contact</Link></li>
+                <li>
+                  <Link href="#">Privacy</Link>
+                </li>
+                <li>
+                  <Link href="#">Terms</Link>
+                </li>
+                <li>
+                  <Link href="#">Contact</Link>
+                </li>
               </ul>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2026 Dumbbells & Dragons. All rights reserved. Built by warriors, for warriors.</p>
+            <p>
+              &copy; 2026 Dumbbells & Dragons. All rights reserved. Built by
+              warriors, for warriors.
+            </p>
           </div>
         </div>
       </footer>
