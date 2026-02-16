@@ -1,5 +1,4 @@
-//TODO: Set up a database pool
-//-install pg (is not default)
+//! Install pg
 
 import pg from "pg";
 

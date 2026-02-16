@@ -1,3 +1,5 @@
+--! COMPILED BY NENE :)
+
 --TODO: Create SQL queries to ... 
 -- (1) create all tables
 -- (2) insert seed data
