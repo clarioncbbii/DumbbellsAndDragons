@@ -1,15 +1,15 @@
-import db from '@/app/lib/dbConnection';
-import { auth } from '@clerk/nextjs/server';
+import db from "@/utils/dbConnection";
+import { auth } from "@clerk/nextjs/server";
 
 export async function GET(request) {
   const { userId } = await auth();
-  
+
   if (!userId) {
-    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const client = await pool.connect();
-  
+  const client = await db.connect();
+
   try {
     const userQuery = `
       SELECT classes_id_fk, prog_start_date 
@@ -17,13 +17,16 @@ export async function GET(request) {
       WHERE clerk_id = $1
     `;
     const userResult = await client.query(userQuery, [userId]);
-    
+
     if (userResult.rows.length === 0) {
-      return Response.json({ 
-        error: 'User not found. Please complete onboarding first.' 
-      }, { status: 404 });
+      return Response.json(
+        {
+          error: "User not found. Please complete onboarding first.",
+        },
+        { status: 404 },
+      );
     }
-    
+
     const user = userResult.rows[0];
 
     // calculate current week based on start date
@@ -39,13 +42,18 @@ export async function GET(request) {
       JOIN dd_classes c ON c.id = p.classes_id_fk
       WHERE p.classes_id_fk = $1
     `;
-    const programResult = await client.query(programQuery, [user.classes_id_fk]);
+    const programResult = await client.query(programQuery, [
+      user.classes_id_fk,
+    ]);
     const program = programResult.rows[0];
 
     if (!program) {
-      return Response.json({ 
-        error: 'No program found for this class' 
-      }, { status: 404 });
+      return Response.json(
+        {
+          error: "No program found for this class",
+        },
+        { status: 404 },
+      );
     }
 
     // get all weeks for this program
@@ -94,22 +102,24 @@ export async function GET(request) {
     `;
     const exercisesResult = await client.query(exercisesQuery, [program.id]);
 
-    const weeks = weeksResult.rows.map(week => {
-      const weekWorkouts = workoutsResult.rows.filter(w => w.week_num === week.week_num);
-      
+    const weeks = weeksResult.rows.map((week) => {
+      const weekWorkouts = workoutsResult.rows.filter(
+        (w) => w.week_num === week.week_num,
+      );
+
       return {
         weekNumber: week.week_num,
-        days: weekWorkouts.map(workout => {
+        days: weekWorkouts.map((workout) => {
           const workoutExercises = exercisesResult.rows
-            .filter(e => e.workouts_id_fk === workout.id)
-            .map(e => ({
+            .filter((e) => e.workouts_id_fk === workout.id)
+            .map((e) => ({
               name: e.exercise_name,
               sets: e.sets,
               reps: e.reps,
               weight: parseFloat(e.weight) || 0,
-              unit: e.weight_unit || '',
+              unit: e.weight_unit || "",
               xp: e.exercise_xp,
-              restTime: e.rest_time
+              restTime: e.rest_time,
             }));
 
           const totalXp = workoutExercises.reduce((sum, ex) => sum + ex.xp, 0);
@@ -118,19 +128,26 @@ export async function GET(request) {
             id: workout.id,
             dayName: workout.day_num.toString(),
             workoutName: workout.workout_type,
-            subtitle: workout.is_rest ? 'Active Recovery Day' : '',
-            status: workout.is_rest ? 'rest' : (workout.day_num === new Date().getDay() && week.week_num === currentWeek ? 'today' : 'upcoming'),
+            subtitle: workout.is_rest ? "Active Recovery Day" : "",
+            status: workout.is_rest
+              ? "rest"
+              : workout.day_num === new Date().getDay() &&
+                  week.week_num === currentWeek
+                ? "today"
+                : "upcoming",
             exercises: workoutExercises,
             totalXp: totalXp,
-            restMessage: workout.is_rest ? 'Light stretching, walking, or yoga recommended' : null
+            restMessage: workout.is_rest
+              ? "Light stretching, walking, or yoga recommended"
+              : null,
           };
-        })
+        }),
       };
     });
 
     return Response.json({
       name: `${program.class_name} Powerbuilding`,
-      level: 'Intermediate',
+      level: "Intermediate",
       currentWeek: Math.min(currentWeek, program.duration_weeks),
       totalWeeks: program.duration_weeks,
       weeklyXpGoal: 5000,
@@ -138,15 +155,17 @@ export async function GET(request) {
       workoutsCompleted: 0, // TODO: -----> calculate from user_workout_completion
       workoutsTotal: 5,
       currentStreak: 0, // TODO: ------->calculate
-      weeks: weeks
+      weeks: weeks,
     });
-
   } catch (error) {
-    console.error('Database error:', error);
-    return Response.json({ 
-      error: 'Failed to fetch program',
-      details: error.message 
-    }, { status: 500 });
+    console.error("Database error:", error);
+    return Response.json(
+      {
+        error: "Failed to fetch program",
+        details: error.message,
+      },
+      { status: 500 },
+    );
   } finally {
     client.release();
   }
