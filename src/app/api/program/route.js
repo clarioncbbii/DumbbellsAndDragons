@@ -1,4 +1,4 @@
-import pool from "@/utils/dbConnection";
+import db from "@/utils/dbConnection";
 import { auth } from "@clerk/nextjs/server";
 
 export async function GET(request) {
@@ -8,7 +8,7 @@ export async function GET(request) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const client = await pool.connect();
+  const client = await db.connect();
 
   try {
     const userQuery = `
