@@ -1,13 +1,11 @@
-export default function RogueChoice({ styles }) {
+export default function StatsAside({ styles }) {
   return (
     <div className={styles.class_details_showcase}>
       <div className={styles.class_showcase_header}>
-        <div className={styles.class_showcase_icon}>⚔️</div>
+        <div className={styles.class_showcase_icon}>🗡️🛡️</div>
         <div>
-          <h3 className={styles.class_showcase_name}>Rogue</h3>
-          <p className={styles.class_showcase_tagline}>
-            Master of Agility & Control
-          </p>
+          <h3 className={styles.class_showcase_name}>Paladin</h3>
+          <p className={styles.class_showcase_tagline}>Balanced Warrior</p>
         </div>
       </div>
       <div className={styles.class_showcase_content}>

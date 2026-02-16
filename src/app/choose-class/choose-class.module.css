@@ -7,7 +7,7 @@
 }
 
 .section {
-  padding: 5rem;
+  padding: 5rem 5rem 0 5rem;
 }
 
 .container {
@@ -90,9 +90,15 @@
 
 .class_showcase_header {
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 2rem;
   margin-bottom: 2rem;
+}
+
+.class_showcase_info {
+  width: 50vw;
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  border-radius: 0.75rem;
 }
 
 .class_showcase_icon {
@@ -117,12 +123,12 @@
 .showcase_title {
   font-weight: 600;
   color: #cbd5e1;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0 0.5rem 1rem;
 }
 
 .showcase_list {
+  padding: 1rem 3rem 0 5rem;
   list-style: none;
-  padding: 0;
   margin: 0;
 }
 

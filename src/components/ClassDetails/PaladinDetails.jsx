@@ -7,8 +7,6 @@ export default function PaladinDetails({ styles }) {
           <h3 className={styles.class_showcase_name}>Paladin</h3>
           <p className={styles.class_showcase_tagline}>Balanced Warrior</p>
         </div>
-      </div>
-      <div className={styles.class_showcase_content}>
         <div className={styles.class_showcase_info}>
           <h4 className={styles.showcase_title}>Training Focus:</h4>
           <ul className={styles.showcase_list}>
@@ -26,6 +24,8 @@ export default function PaladinDetails({ styles }) {
             </li>
           </ul>
         </div>
+      </div>
+      <div className={styles.class_showcase_content}>
         <div className={styles.class_showcase_stats}>
           <h4 className={styles.showcase_title}>Starting Stats:</h4>
           <div className={styles.showcase_stat}>
@@ -33,7 +33,7 @@ export default function PaladinDetails({ styles }) {
             <div className={styles.showcase_bar_bg}>
               <div
                 className={styles.showcase_bar}
-                // barbarian-gradient}
+                // Paladin-gradient}
                 // style={{ width: "95%" }}
               />
             </div>
@@ -43,7 +43,7 @@ export default function PaladinDetails({ styles }) {
             <div className={styles.showcase_bar_bg}>
               <div
                 className={styles.showcase_bar}
-                //  barbarian-gradient
+                //  Paladin-gradient
                 // style={{ width: "60%" }}
               />
             </div>
@@ -53,7 +53,7 @@ export default function PaladinDetails({ styles }) {
             <div className={styles.showcase_bar_bg}>
               <div
                 className={styles.showcase_bar}
-                // styles.barbarian-gradient
+                // Paladin-gradient
                 // style={{ width: "40%" }}
               />
             </div>

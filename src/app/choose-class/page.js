@@ -66,7 +66,7 @@ export default async function ChooseClass({ params, searchParams }) {
 
             {/* Example Class Details mock up  */}
             {classChoice.class === "1" ? (
-              <div id="classDetails" className="flex flex-col">
+              <div id="classDetails">
                 {" "}
                 <BarbarianDetails styles={styles} />
                 <Link
@@ -88,7 +88,7 @@ export default async function ChooseClass({ params, searchParams }) {
                 </Link>
               </div>
             ) : classChoice.class === "2" ? (
-              <div id="classDetails" className="flex flex-col">
+              <div id="classDetails">
                 {" "}
                 <RogueDetails styles={styles} />
                 <Link
@@ -110,7 +110,7 @@ export default async function ChooseClass({ params, searchParams }) {
                 </Link>
               </div>
             ) : classChoice.class === "3" ? (
-              <div id="classDetails" className="flex flex-col">
+              <div id="classDetails">
                 {" "}
                 <PaladinDetails styles={styles} />
                 <Link

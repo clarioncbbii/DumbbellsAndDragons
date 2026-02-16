@@ -9,8 +9,6 @@ export default function RogueDetails({ styles }) {
             Master of Agility & Control
           </p>
         </div>
-      </div>
-      <div className={styles.class_showcase_content}>
         <div className={styles.class_showcase_info}>
           <h4 className={styles.showcase_title}>Training Focus:</h4>
           <ul className={styles.showcase_list}>
@@ -28,6 +26,8 @@ export default function RogueDetails({ styles }) {
             </li>
           </ul>
         </div>
+      </div>
+      <div className={styles.class_showcase_content}>
         <div className={styles.class_showcase_stats}>
           <h4 className={styles.showcase_title}>Starting Stats:</h4>
           <div className={styles.showcase_stat}>

@@ -1,12 +1,12 @@
-export default function BarbarianChoice({ styles }) {
+export default function FormSection({ styles }) {
   return (
     <div className={styles.class_details_showcase}>
       <div className={styles.class_showcase_header}>
-        <div className={styles.class_showcase_icon}>🪓</div>
+        <div className={styles.class_showcase_icon}>⚔️</div>
         <div>
-          <h3 className={styles.class_showcase_name}>Barbarian</h3>
+          <h3 className={styles.class_showcase_name}>Rogue</h3>
           <p className={styles.class_showcase_tagline}>
-            Master of Raw Strength
+            Master of Agility & Control
           </p>
         </div>
       </div>
@@ -15,20 +15,23 @@ export default function BarbarianChoice({ styles }) {
           <h4 className={styles.showcase_title}>Training Focus:</h4>
           <ul className={styles.showcase_list}>
             <li>
-              <span className={styles.showcase_bullet}>▸</span> Heavy Squats
+              <span className={styles.showcase_bullet}>▸</span> focus
+              placeholder 1
             </li>
             <li>
-              <span className={styles.showcase_bullet}>▸</span> Deadlifts
+              <span className={styles.showcase_bullet}>▸</span> focus
+              placeholder 2
             </li>
             <li>
-              <span className={styles.showcase_bullet}>▸</span> Bench Press
+              <span className={styles.showcase_bullet}>▸</span> focus
+              placeholder 3
             </li>
           </ul>
         </div>
         <div className={styles.class_showcase_stats}>
           <h4 className={styles.showcase_title}>Starting Stats:</h4>
           <div className={styles.showcase_stat}>
-            <span>Strength</span>
+            <span>stat placeholder</span>
             <div className={styles.showcase_bar_bg}>
               <div
                 className={styles.showcase_bar}
@@ -38,7 +41,7 @@ export default function BarbarianChoice({ styles }) {
             </div>
           </div>
           <div className={styles.showcase_stat}>
-            <span>Stamina</span>
+            <span>stat placeholder</span>
             <div className={styles.showcase_bar_bg}>
               <div
                 className={styles.showcase_bar}
@@ -48,7 +51,7 @@ export default function BarbarianChoice({ styles }) {
             </div>
           </div>
           <div className={styles.showcase_stat}>
-            <span>Agility</span>
+            <span>stat placeholder</span>
             <div className={styles.showcase_bar_bg}>
               <div
                 className={styles.showcase_bar}
