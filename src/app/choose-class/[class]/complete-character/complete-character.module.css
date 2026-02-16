@@ -62,7 +62,11 @@
   font-size: 3.75rem;
   margin-bottom: 1rem;
 }
-
+.class_icon img {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
 .class_name {
   font-size: 1.5rem;
   font-weight: 700;
@@ -76,7 +80,9 @@
 
 /* Class Details mockups*/
 .class_details_showcase {
-  padding: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .class_showcase_header {

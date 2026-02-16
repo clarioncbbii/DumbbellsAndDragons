@@ -1,11 +1,12 @@
-import { Sword, Zap, Trophy, TrendingUp, Users, Target } from 'lucide-react';
-import Link from 'next/link';
-import SignInBar from '@/components/SignInBar/SignInBar';
-import './page.css';
+import { Sword, Zap, Trophy, TrendingUp, Users, Target } from "lucide-react";
+import Link from "next/link";
+import SignInBar from "@/components/SignInBar/SignInBar";
+import "./page.css";
 import Image from "next/image";
 
+export default async function LandingPage({ searchParams }) {
+  const classChoice = await searchParams;
 
-export default function LandingPage() {
   return (
     <div className="page-wrapper">
       <SignInBar />
@@ -44,11 +45,11 @@ export default function LandingPage() {
               <div className="character-preview">
                 <div className="character-avatar">
                   <Image
-    src="/barbarian.png"
-    alt="Barbarian"
-    width={200}
-    height={200}
-  />
+                    src="/barbarian.png"
+                    alt="Barbarian"
+                    width={200}
+                    height={200}
+                  />
                 </div>
                 {/* dice = placeholder till i have more time on the sprites/gifs -----------------------------*/}
                 <div className="character-details">
@@ -131,7 +132,7 @@ export default function LandingPage() {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Choose Your Path</h2>
-            <p className="section-description">
+            <p id="classDetails" className="section-description">
               Each class offers unique training programs and progression
             </p>
           </div>
@@ -139,49 +140,62 @@ export default function LandingPage() {
           {/* Class Cards - Static for now we can add modals later or pages /about ... something to discuss */}
           <div className="class-selector">
             <div className="class-card glass-card">
-              <div className="class-icon"><Image
-    src="/barbarian.png"
-    alt="Barbarian"
-    width={200}
-    height={200}
-  /></div>
-              <h3 className="class-name">Barbarian</h3>
-              <p className="class-tagline">Master of Raw Strength</p>
-              <p className="class-description">
-                Dominate with heavy compound lifts and progressive overload
-              </p>
+              <Link href={`/?class=1#classDetails`}>
+                <div className="class-icon">
+                  <Image
+                    src="/barbarian.png"
+                    alt="Barbarian"
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <h3 className="class-name">Barbarian</h3>
+                <p className="class-tagline">Master of Raw Strength</p>
+                <p className="class-description">
+                  Dominate with heavy compound lifts and progressive overload
+                </p>
+              </Link>
             </div>
 
             <div className="class-card glass-card">
-              <div className="class-icon"> <Image
-    src="/rogue.gif"
-    alt="Rogue"
-    width={200}
-    height={200}
-  /></div>
-              <h3 className="class-name">Rogue</h3>
-              <p className="class-tagline">Agility & Control</p>
-              <p className="class-description">
-                Master bodyweight movements and calisthenics
-              </p>
+              <Link href={`/?class=2#classDetails`}>
+                <div className="class-icon">
+                  <Image
+                    src="/rogue.gif"
+                    alt="Rogue"
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <h3 className="class-name">Rogue</h3>
+                <p className="class-tagline">Agility & Control</p>
+                <p className="class-description">
+                  Master bodyweight movements and calisthenics
+                </p>
+              </Link>
             </div>
 
             <div className="class-card glass-card">
-              <div className="class-icon"><Image
-    src="/knight_type_a.png"
-    alt="paladin"
-    width={200}
-    height={200}
-  /></div>
-              <h3 className="class-name">Paladin</h3>
-              <p className="class-tagline">Balanced Warrior</p>
-              <p className="class-description">
-                Combine strength training with endurance work
-              </p>
+              <Link href={`/?class=3#classDetails`}>
+                <div className="class-icon">
+                  <Image
+                    src="/knight_type_a.png"
+                    alt="paladin"
+                    width={200}
+                    height={200}
+                  />
+                </div>
+                <h3 className="class-name">Paladin</h3>
+                <p className="class-tagline">Balanced Warrior</p>
+                <p className="class-description">
+                  Combine strength training with endurance work
+                </p>{" "}
+              </Link>
             </div>
           </div>
 
           {/* Example Class Details mock up  */}
+          {/* Annabel to make this dynamic like choose class */}
           <div className="class-details-showcase glass-card">
             <div className="class-showcase-header">
               <div className="class-showcase-icon">🪓</div>

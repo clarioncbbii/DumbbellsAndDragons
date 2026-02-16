@@ -2,13 +2,13 @@ export const mockProgram = {
   name: "Barbarian  Powerbuilding", //----> we haven't included this in our database but i think it will look more professional
   level: "Intermediate", //--------> also not included but we could...
   currentWeek: 1,
-  totalWeeks: 8, // --------> could make this 4 for ease ... 
+  totalWeeks: 8, // --------> could make this 4 for ease ...
   weeklyXpGoal: 5000,
   weeklyXpEarned: 3250,
   workoutsCompleted: 3,
   workoutsTotal: 5,
   currentStreak: 7,
-  
+
   weeks: [
     {
       weekNumber: 1,
@@ -27,7 +27,7 @@ export const mockProgram = {
               weight: 315,
               unit: "lbs",
               xp: 450,
-              icon: "🦵"
+              icon: "🦵",
             },
             {
               name: "Romanian Deadlift",
@@ -36,7 +36,7 @@ export const mockProgram = {
               weight: 225,
               unit: "lbs",
               xp: 320,
-              icon: "🦵"
+              icon: "🦵",
             },
             {
               name: "Leg Extention",
@@ -45,10 +45,10 @@ export const mockProgram = {
               weight: 450,
               unit: "lbs",
               xp: 280,
-              icon: "🦵"
-            }
+              icon: "🦵",
+            },
           ],
-          totalXp: 1250
+          totalXp: 1250,
         },
         {
           id: 2,
@@ -58,31 +58,64 @@ export const mockProgram = {
           status: "rest",
           exercises: [],
           totalXp: 0,
-          restMessage: "Light stretching, walking, or yoga recommended"
+          restMessage: "Light stretching, walking, or yoga recommended",
         },
         // ... more days
-      ]
+      ],
     },
     {
       weekNumber: 2,
       days: [
         // Current week data
-      ]
-    }
-  ]
+      ],
+    },
+  ],
 };
 
 // ----------------------------------------------------------------------Helper function to get current week*********
 export function getCurrentWeek(programData) {
-  return programData.weeks.find(week => week.weekNumber === programData.currentWeek);
+  return programData.weeks.find(
+    (week) => week.weekNumber === programData.currentWeek,
+  );
 }
 // Helper function to get a specific week by number
 export function getWeek(programData, weekNumber) {
-  return programData.weeks.find(week => week.weekNumber === weekNumber);
+  return programData.weeks.find((week) => week.weekNumber === weekNumber);
 }
 
 // ------------------------------------------------------------Helper to get day status
 export function getDayStatus(day, currentDate) {
-  // sudo logic... real logic needed 
+  // sudo logic... real logic needed
   return day.status;
 }
+
+export const classData = {
+  1: {
+    imageSrc: "/barbarian.png",
+    imageAlt: "Barbarian",
+    name: "Barbarian",
+    details: {
+      title: "Barbarian Master of Raw Strength",
+      tag1: "Dominate with heavy compound lifts and progressive overload",
+      tag2: "Perfect for power-building and strength gains!",
+    },
+    profs: { p1: "Heavy Squats", p2: "Deadlifts", p3: "Bench Press" },
+    stats: { Strength: 84, Stamina: 60, Vitality: 70 },
+  },
+  2: {
+    imageSrc: "/rogue.gif",
+    imageAlt: "Rogue",
+    name: "Rogue",
+    details: { title: "", tag1: "", tag2: "" },
+    profs: { p1: "y", p2: "y", p3: "y" },
+    stats: { Strength: 1, Stamina: 1, Vitality: 1 },
+  },
+  3: {
+    imageSrc: "/knight_type_a.png",
+    imageAlt: "Paladin",
+    name: "Paladin",
+    details: { title: "", tag1: "", tag2: "" },
+    profs: { p1: "x", p2: "x", p3: "x" },
+    stats: { Strength: 2, Stamina: 2, Vitality: 2 },
+  },
+};

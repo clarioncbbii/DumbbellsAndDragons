@@ -1,63 +1,52 @@
-export default function HeroSection({ styles }) {
+import Image from "next/image";
+
+export default function HeroSection({ styles, classChoice, classData }) {
+  console.log(classData[classChoice.class]);
+  console.log(classChoice.class);
   return (
     <div className={styles.class_details_showcase}>
-      <div className={styles.class_showcase_header}>
-        <div className={styles.class_showcase_icon}>🪓</div>
-        <div>
-          <h3 className={styles.class_showcase_name}>Barbarian</h3>
-          <p className={styles.class_showcase_tagline}>
-            Master of Raw Strength
-          </p>
-        </div>
+      {/* keep this */}
+
+      <div className={styles.class_icon}>
+        <Image
+          src={classData[classChoice.class].imageSrc}
+          alt={classData[classChoice.class].imageAlt}
+          width={200}
+          height={200}
+        />
       </div>
-      <div className={styles.class_showcase_content}>
-        <div className={styles.class_showcase_info}>
-          <h4 className={styles.showcase_title}>Training Focus:</h4>
-          <ul className={styles.showcase_list}>
-            <li>
-              <span className={styles.showcase_bullet}>▸</span> Heavy Squats
-            </li>
-            <li>
-              <span className={styles.showcase_bullet}>▸</span> Deadlifts
-            </li>
-            <li>
-              <span className={styles.showcase_bullet}>▸</span> Bench Press
-            </li>
-          </ul>
-        </div>
-        <div className={styles.class_showcase_stats}>
-          <h4 className={styles.showcase_title}>Starting Stats:</h4>
-          <div className={styles.showcase_stat}>
-            <span>Strength</span>
-            <div className={styles.showcase_bar_bg}>
-              <div
-                className={styles.showcase_bar}
-                // barbarian-gradient}
-                // style={{ width: "95%" }}
-              />
-            </div>
-          </div>
-          <div className={styles.showcase_stat}>
-            <span>Stamina</span>
-            <div className={styles.showcase_bar_bg}>
-              <div
-                className={styles.showcase_bar}
-                //  barbarian-gradient
-                // style={{ width: "60%" }}
-              />
-            </div>
-          </div>
-          <div className={styles.showcase_stat}>
-            <span>Agility</span>
-            <div className={styles.showcase_bar_bg}>
-              <div
-                className={styles.showcase_bar}
-                // styles.barbarian-gradient
-                // style={{ width: "40%" }}
-              />
-            </div>
-          </div>
-        </div>
+
+      <div className={`p-2 border-0 border-amber-100 rounded-2xl`}>
+        <h3 className={styles.class_showcase_name}>nameVariable-fromDB</h3>
+        <p className={styles.class_showcase_tagline}>Character Name</p>
+        <h3 className={styles.class_showcase_name}>
+          {classData[classChoice.class].name}
+        </h3>
+        <p className={styles.class_showcase_tagline}>Character Name</p>
+      </div>
+
+      <div className={styles.class_showcase_info}>
+        <p>Level</p>
+        <p>X</p>
+        <p>______</p>
+      </div>
+
+      <div className={styles.class_showcase_info}>
+        <h4 className={styles.showcase_title}>Training Proficiencies:</h4>
+        <ul className={styles.showcase_list}>
+          <li>
+            <span className={styles.showcase_bullet}>▸</span>{" "}
+            {classData[classChoice.class].profs.p1}
+          </li>
+          <li>
+            <span className={styles.showcase_bullet}>▸</span>{" "}
+            {classData[classChoice.class].profs.p2}
+          </li>
+          <li>
+            <span className={styles.showcase_bullet}>▸</span>{" "}
+            {classData[classChoice.class].profs.p3}
+          </li>
+        </ul>
       </div>
     </div>
   );

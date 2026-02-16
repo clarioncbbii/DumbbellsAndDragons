@@ -59,6 +59,30 @@
     border-color: rgba(251, 255, 12, 0.868);
   }
 }
+/* 
+.class-card {
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.class-icon {
+  font-size: 3.75rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+/* update added after the images  */
+/*
+.class-icon img {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}  
+  */
 
 .class_icon {
   font-size: 3.75rem;

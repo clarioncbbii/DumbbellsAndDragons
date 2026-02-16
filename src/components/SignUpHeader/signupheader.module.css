@@ -13,10 +13,12 @@
 
 .page {
   color: white;
+  width: 10rem;
 }
 
 .activePage {
   color: lime;
+  width: 10rem;
 }
 
 .bar {

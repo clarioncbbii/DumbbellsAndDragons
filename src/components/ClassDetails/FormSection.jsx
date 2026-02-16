@@ -1,66 +1,47 @@
-export default function FormSection({ styles }) {
+export default function FormSection({ styles, classChoice, classData }) {
+  // classChoice will be added to the form submission
+
   return (
     <div className={styles.class_details_showcase}>
-      <div className={styles.class_showcase_header}>
-        <div className={styles.class_showcase_icon}>⚔️</div>
-        <div>
-          <h3 className={styles.class_showcase_name}>Rogue</h3>
-          <p className={styles.class_showcase_tagline}>
-            Master of Agility & Control
-          </p>
-        </div>
-      </div>
-      <div className={styles.class_showcase_content}>
-        <div className={styles.class_showcase_info}>
-          <h4 className={styles.showcase_title}>Training Focus:</h4>
-          <ul className={styles.showcase_list}>
-            <li>
-              <span className={styles.showcase_bullet}>▸</span> focus
-              placeholder 1
-            </li>
-            <li>
-              <span className={styles.showcase_bullet}>▸</span> focus
-              placeholder 2
-            </li>
-            <li>
-              <span className={styles.showcase_bullet}>▸</span> focus
-              placeholder 3
-            </li>
-          </ul>
-        </div>
-        <div className={styles.class_showcase_stats}>
-          <h4 className={styles.showcase_title}>Starting Stats:</h4>
-          <div className={styles.showcase_stat}>
-            <span>stat placeholder</span>
-            <div className={styles.showcase_bar_bg}>
-              <div
-                className={styles.showcase_bar}
-                // barbarian-gradient}
-                // style={{ width: "95%" }}
-              />
-            </div>
-          </div>
-          <div className={styles.showcase_stat}>
-            <span>stat placeholder</span>
-            <div className={styles.showcase_bar_bg}>
-              <div
-                className={styles.showcase_bar}
-                //  barbarian-gradient
-                // style={{ width: "60%" }}
-              />
-            </div>
-          </div>
-          <div className={styles.showcase_stat}>
-            <span>stat placeholder</span>
-            <div className={styles.showcase_bar_bg}>
-              <div
-                className={styles.showcase_bar}
-                // styles.barbarian-gradient
-                // style={{ width: "40%" }}
-              />
-            </div>
-          </div>
-        </div>
+      <form>
+        {" "}
+        <fieldset>
+          <legend>Your Data</legend>
+
+          <label htmlFor="age">Age</label>
+          <select name="age" type="text" required>
+            <option disabled>Select...</option>
+            <option value={"16 to 25"}>16 to 25</option>
+            <option value={"26 to 35"}>26 to 35</option>
+            <option value={"36 to 45"}>36 to 45</option>
+            <option value={"46 to 55"}>46 to 55</option>
+            <option value={"56 to 65"}>56 to 65</option>
+            <option value={"66 +"}>66 +</option>
+          </select>
+
+          <label htmlFor="bodyType">Body Type</label>
+          <select name="bodyType" type="text" required>
+            <option disabled>Select...</option>
+            <option value={"A"}>Type A</option>
+            <option value={"B"}>Type B</option>
+            <option value={"None"}>Not Specified</option>
+          </select>
+
+          <label htmlFor="weight">Weight</label>
+          <input name="weight" type="number" required />
+        </fieldset>
+        <fieldset>
+          <legend>Your Bio</legend>
+          <label htmlFor="bio">Tell us your story...</label>
+          <textarea name="bio" required />
+        </fieldset>
+      </form>
+
+      <div>
+        <h3>Class Features</h3>
+        <h4>{classData[classChoice.class].details.title}</h4>
+        <p>{classData[classChoice.class].details.tag1}</p>
+        <p>{classData[classChoice.class].details.tag2}</p>
       </div>
     </div>
   );
