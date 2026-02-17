@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { useUser } from "@clerk/nextjs";
 
 export default function NavDropdownMenu() {
+  const { user } = useUser();
+
   return (
     <>
       <DropdownMenu.Root>
@@ -43,6 +46,15 @@ export default function NavDropdownMenu() {
             className="px-3 py-2 hover:bg-white/10 transition-colors rounded-md"
           >
             <Link href={"/program"}>Program</Link>
+          </DropdownMenu.Item>
+
+          <DropdownMenu.Item
+            asChild
+            className="px-3 py-2 hover:bg-white/10 transition-colors rounded-md"
+          >
+            <Link href={`/my-character/${user.id}`}>
+              {user.username}&apos;s character
+            </Link>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
