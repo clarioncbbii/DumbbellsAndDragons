@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function DayCard({ day }) {
   const getStatusBadge = () => {
     switch(day.status) {
@@ -19,7 +21,12 @@ export default function DayCard({ day }) {
       return <button className="day-action secondary">View Details</button>;
     }
     if (day.status === 'today') {
-      return <button className="day-action">Start Workout →</button>;
+      
+      return (
+        <Link href={`/workout/log?day=${day.id}`}>
+          <button className="day-action">Start Workout →</button>
+        </Link>
+      );
     }
     if (day.status === 'rest') {
       return null;
@@ -27,7 +34,11 @@ export default function DayCard({ day }) {
     if (day.status === 'locked') {
       return null;
     }
-    return <button className="day-action secondary">Preview</button>;
+    return (
+      <Link href={`/workout/log?day=${day.id}`}>
+        <button className="day-action secondary">Preview</button>
+      </Link>
+    );
   };
 
   return (
