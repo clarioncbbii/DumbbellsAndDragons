@@ -1,9 +1,11 @@
 import "./dashboard.css";
+import NavBar from "@/components/Navigation/NavBar";
 
 export default function DashboardPage() {
   return (
     <>
       <section className="dashboard">
+        <NavBar />
         <div className="dashboard-title-div">
           <h2>Welcome back, Bob! 💪</h2>
           <h3>Ready to continue your quest?</h3>

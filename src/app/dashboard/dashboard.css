@@ -2,7 +2,9 @@
   min-height: 100vh;
   background: linear-gradient(to bottom, #0a0e14, #0f172a, #0a0e14);
   color: white;
-  padding: 1rem;
+  padding: 5rem 1rem 1rem 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .dashboard-title-div {
