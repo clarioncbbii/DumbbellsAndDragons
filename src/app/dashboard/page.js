@@ -1,4 +1,5 @@
 import "./dashboard.css";
+import Link from 'next/link';
 
 export default function DashboardPage() {
   return (
@@ -98,8 +99,11 @@ export default function DashboardPage() {
                 </li>
               </ol>
             </div>
+{/* =======we need to change this for the workout/log page once but this will require fecting the workout id for that specific day from the api like the program page does so thats a post mvp problem======= */}
+            <Link href="/program">
+  <button className="start-workout-btn">Start Workout</button>
+</Link>
 
-            <button className="start-workout-btn">Start Workout</button>
           </section>
 
           <section className="week-list">
