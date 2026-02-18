@@ -56,7 +56,7 @@ export default function TermsPage() {
           We reserve the right to update these terms without notice. Continued
           use constitutes acceptance of the revised terms.
         </p>
-
+        <br />
         <i>
           <p className="legal-note">
             Last updated: {new Date().toLocaleDateString("en-GB")}

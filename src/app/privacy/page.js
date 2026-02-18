@@ -53,10 +53,12 @@ export default function PrivacyPage() {
             privacy@dumbbellsanddragons.com
           </Link>
         </p>
-
-        <p className="legal-note">
-          Last updated: {new Date().toLocaleDateString("en-GB")}
-        </p>
+        <br />
+        <i>
+          <p className="legal-note">
+            Last updated: {new Date().toLocaleDateString("en-GB")}
+          </p>
+        </i>
       </div>
     </main>
   );
