@@ -15,6 +15,7 @@ export default async function MyCharacter({ params }) {
   // I will need to pull data from the
   // classChoice will need to be the user's choice
   const classChoice = null;
+
   return (
     <>
       <div className={styles.page_wrapper}>
