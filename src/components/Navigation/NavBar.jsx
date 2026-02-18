@@ -7,9 +7,6 @@ export default function NavBar() {
   return (
     <>
       <nav>
-        {/* DO NOT ACCEPT THIS!! */}
-        <SignOutButton />
-        {/* DO NOT ACCEPT THIS!! */}
         <NavDropdownMenu />
         <Link href={"/"}>⚔️ Dumbbells & Dragons</Link>
         <UserButton />

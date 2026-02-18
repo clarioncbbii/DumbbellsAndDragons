@@ -29,7 +29,23 @@ WHERE clerk_id = $1`,
     redirect("/choose-class");
   }
 
-  // classChoice will need to be the user's choice
+  async function handleEditSubmit(formData) {
+    "use server";
+    console.log("submit");
+    const { age, gender, weight, bio } = Object.fromEntries(formData);
+    console.log(gender, age, weight, bio);
+
+    // insert user row
+    db.query(
+      `UPDATE dd_users SET gender = $1, age = $2, weight = $3, bio = $4) VALUES ($1, $2, $3, $4)`,
+      [gender, age, weight, bio],
+    );
+
+    console.log("Success");
+
+    revalidatePath(`/my-character/${user?.id}`);
+    redirect(`/my-character/${user?.id}`);
+  }
 
   return (
     <>
@@ -61,6 +77,7 @@ WHERE clerk_id = $1`,
               />
               {/* import a section with a form and class details */}
               <FormSection
+                handle={handleEditSubmit}
                 user={user.id}
                 classChoice={userQuery}
                 classData={classData}

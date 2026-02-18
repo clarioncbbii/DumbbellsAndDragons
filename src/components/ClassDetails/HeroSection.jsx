@@ -71,7 +71,22 @@ export default function HeroSection({ styles, classChoice, classData, user }) {
               {classData[classChoice.class].profs.p3}
             </li>
           </ul>
-        ) : null}
+        ) : (
+          <ul className={styles.showcase_list}>
+            <li>
+              <span className={styles.showcase_bullet}>▸</span>{" "}
+              {classData[classChoice.class_name].profs.p1}
+            </li>
+            <li>
+              <span className={styles.showcase_bullet}>▸</span>{" "}
+              {classData[classChoice.class_name].profs.p2}
+            </li>
+            <li>
+              <span className={styles.showcase_bullet}>▸</span>{" "}
+              {classData[classChoice.class_name].profs.p3}
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );
