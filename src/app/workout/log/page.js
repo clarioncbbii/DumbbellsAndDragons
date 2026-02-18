@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
 import "./workout.css";
+export const dynamic = "force-dynamic";
 
 export default function WorkoutLogPage() {
   const { isLoaded, userId } = useAuth();
