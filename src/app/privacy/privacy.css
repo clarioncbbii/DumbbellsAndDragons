@@ -1,0 +1,38 @@
+.legal-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a0e14, #0f172a, #0a0e14);
+  padding: 4rem 1rem;
+  color: white;
+}
+
+.legal-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.legal-card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.legal-card h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.legal-card p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-top: 0.75rem;
+}
+
+.legal-note {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
