@@ -9,6 +9,17 @@ import BarbarianDetails from "@/components/ClassDetails/BarbarianDetails";
 import styles from "@/app/choose-class/choose-class.module.css";
 import { classData } from "@/lib/mockData";
 
+export const metadata = {
+  title: "Dumbbells and Dragons",
+  description:
+    "Dumbbells & Dragon transforms workouts into epic quests. Pick your hero, choose your class, and start training. Take on your workout bravely, like a true champion and gain experience, strength, and glory in Dumbbells & Dragons.",
+  openGraph: {
+    title: "Workouts | Dumbbells & Dragon",
+    description:
+      "A fantasy fitness quest inspired by Dungeons & Dragons. Train hard and unlock your true power.",
+  },
+};
+
 export default async function LandingPage({ searchParams }) {
   const classChoice = await searchParams;
 

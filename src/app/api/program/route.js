@@ -78,7 +78,7 @@ export async function GET(request) {
          JOIN jctn_dd_prog_dd_prog_weeks jpw ON jpw.weeks_id_fk = pw.id
          WHERE jpw.prog_id_fk = $1
        )
-       ORDER BY e.id`,
+       ORDER BY jwe.exercise_order, jwe.exercises_id_fk`,
       [program.id]
     );
 

@@ -1,6 +1,17 @@
-import Link from "next/link";
 import "./dashboard.css";
 import NavBar from "@/components/Navigation/NavBar";
+
+
+export const metadata = {
+  title: "Dashboard | Dumbbells & Dragon",
+  description:
+    "Dumbbells & Dragon provides you with curated programs, workouts and exercises, just for you, supporting you in becoming a final boss.",
+  openGraph: {
+    title: "Dashboard | Dumbbells & Dragon",
+    description:
+      "A fantasy fitness quest inspired by Dungeons & Dragons. Train hard and unlock your true power.",
+  },
+};
 
 export default function DashboardPage() {
   return (

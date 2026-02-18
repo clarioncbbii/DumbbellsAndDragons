@@ -1,0 +1,86 @@
+/* Full-page wrapper */
+.notfound-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a0e14, #0f172a, #0a0e14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+}
+
+/* Glass-style card */
+.notfound-card {
+  max-width: 520px;
+  width: 100%;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  border-radius: 1rem;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon */
+.notfound-icon {
+  font-size: 3.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.notfound-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Description */
+.notfound-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 2.5rem;
+}
+
+/* Actions */
+.notfound-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.notfound-button {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+/* Primary */
+.notfound-button.primary {
+  background: linear-gradient(to right, #10b981, #059669);
+  color: white;
+}
+
+.notfound-button.primary:hover {
+  box-shadow: 0 25px 50px -12px rgba(248, 244, 19, 0.5);
+}
+
+/* Secondary */
+.notfound-button.secondary {
+  background: transparent;
+  border: 2px solid #334155;
+  color: white;
+}
+
+.notfound-button.secondary:hover {
+  border-color: #fbff21;
+}
