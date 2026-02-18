@@ -22,7 +22,8 @@ export default async function ChooseClass({ params, searchParams }) {
   );
 
   console.log(userQuery);
-  if (userQuery.length != 0) {
+
+  if (userQuery.length === 0) {
     redirect(`/my-character/${user?.id}`);
   }
 

@@ -1,6 +1,6 @@
 import SignUpHeader from "@/components/SignUpHeader/SignUpHeader";
 import styles from "./complete-character.module.css";
-import { classData } from "@/lib/mockData";
+
 import HeroSection from "@/components/ClassDetails/HeroSection";
 import StatsAside from "@/components/ClassDetails/StatsAside";
 import FormSection from "@/components/ClassDetails/FormSection";
@@ -19,9 +19,16 @@ export default async function CompleteCharacter({ params }) {
   );
 
   console.log(userQuery);
-  if (userQuery.length != 0) {
+  if (userQuery.length === 0) {
     redirect(`/my-character/${user?.id}`);
   }
+  const classQuery = (
+    await db.query(`SELECT * FROM dd_classes WHERE class_name = $1`, [
+      classChoice.class,
+    ])
+  ).rows[0];
+
+  console.log(classQuery);
 
   async function handleCompleteCharacterForm(formData) {
     "use server";
@@ -82,14 +89,14 @@ export default async function CompleteCharacter({ params }) {
               {/* Import a Div with props signifying the classChoice.class option to ensure correct data is pulled*/}
               <HeroSection
                 user={user}
-                classData={classData}
+                classQuery={classQuery}
                 classChoice={classChoice}
                 styles={styles}
               />
               {/* import an aside with the stats data */}
               <StatsAside
                 user={user}
-                classData={classData}
+                classQuery={classQuery}
                 classChoice={classChoice}
                 styles={styles}
               />
@@ -97,7 +104,7 @@ export default async function CompleteCharacter({ params }) {
               <FormSection
                 handle={handleCompleteCharacterForm}
                 user={user}
-                classData={classData}
+                classQuery={classQuery}
                 classChoice={classChoice}
                 styles={styles}
               />

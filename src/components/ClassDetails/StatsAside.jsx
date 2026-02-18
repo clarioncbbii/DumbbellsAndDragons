@@ -1,24 +1,30 @@
-export default function StatsAside({ styles, classChoice, classData, user }) {
+export default function StatsAside({
+  styles,
+  classChoice,
+  classQuery,
+  user,
+  userQuery,
+}) {
   return (
     <div className={styles.charSheet_stats}>
       <div className={styles.showcase_stat}>
-        {!user ? (
+        {!userQuery?.class_name ? (
           <>
-            <span>{classData[classChoice.class].stats.s1[0]}</span>
-            <span>{classData[classChoice.class].stats.s1[1]}</span>
+            <span>{classQuery?.stat_one[0]}</span>
+            <span>{classQuery?.stat_one[1]}</span>
             <div className={styles.showcase_bar_bg}>
               <div
-                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classData[classChoice.class].stats.s1[1]}/100`}
+                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classQuery?.stat_one[1]}/100`}
               />
             </div>
           </>
         ) : (
           <>
-            <span>{classData[classChoice.class_name].stats.s1[0]}</span>
-            <span>{classData[classChoice.class_name].stats.s1[1]}</span>
+            <span>{userQuery?.stat_one[0]}</span>
+            <span>{userQuery?.stat_one[1]}</span>
             <div className={styles.showcase_bar_bg}>
               <div
-                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classData[classChoice.class_name].stats.s1[1]}/100`}
+                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${userQuery?.stat_one[1]}/100`}
               />
             </div>
           </>
@@ -26,23 +32,23 @@ export default function StatsAside({ styles, classChoice, classData, user }) {
       </div>
 
       <div className={styles.showcase_stat}>
-        {!user ? (
+        {!userQuery?.class_name ? (
           <>
-            <span>{classData[classChoice.class].stats.s2[0]}</span>
-            <span>{classData[classChoice.class].stats.s2[1]}</span>
+            <span>{classQuery?.stat_two[0]}</span>
+            <span>{classQuery?.stat_two[1]}</span>
             <div className={styles.showcase_bar_bg}>
               <div
-                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classData[classChoice.class].stats.s2[1]}/100`}
+                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classQuery?.stat_two[1]}/100`}
               />
-            </div>{" "}
+            </div>
           </>
         ) : (
           <>
-            <span>{classData[classChoice.class_name].stats.s2[0]}</span>
-            <span>{classData[classChoice.class_name].stats.s2[1]}</span>
+            <span>{userQuery?.stat_two[0]}</span>
+            <span>{userQuery?.stat_two[1]}</span>
             <div className={styles.showcase_bar_bg}>
               <div
-                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classData[classChoice.class_name].stats.s2[1]}/100`}
+                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${userQuery?.stat_two[1]}/100`}
               />
             </div>{" "}
           </>
@@ -50,23 +56,23 @@ export default function StatsAside({ styles, classChoice, classData, user }) {
       </div>
 
       <div className={styles.showcase_stat}>
-        {!user ? (
+        {!userQuery?.class_name ? (
           <>
-            <span>{classData[classChoice.class].stats.s3[0]}</span>
-            <span>{classData[classChoice.class].stats.s3[1]}</span>
+            <span>{classQuery?.stat_three[0]}</span>
+            <span>{classQuery?.stat_three[1]}</span>
             <div className={styles.showcase_bar_bg}>
               <div
-                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classData[classChoice.class].stats.s3[1]}/100`}
+                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classQuery?.stat_three[1]}/100`}
               />
             </div>
           </>
         ) : (
           <>
-            <span>{classData[classChoice.class_name].stats.s3[0]}</span>
-            <span>{classData[classChoice.class_name].stats.s3[1]}</span>
+            <span>{userQuery?.stat_three[0]}</span>
+            <span>{userQuery?.stat_three[1]}</span>
             <div className={styles.showcase_bar_bg}>
               <div
-                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${classData[classChoice.class_name].stats.s3[1]}/100`}
+                className={`${styles.showcase_bar} ${styles.barbarian_gradient} w-${userQuery?.stat_three[1]}/100`}
               />
             </div>
           </>

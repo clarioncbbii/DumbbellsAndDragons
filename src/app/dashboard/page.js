@@ -1,6 +1,6 @@
+import { Link } from "lucide-react";
 import "./dashboard.css";
 import NavBar from "@/components/Navigation/NavBar";
-
 
 export const metadata = {
   title: "Dashboard | Dumbbells & Dragon",

@@ -1,9 +1,19 @@
 import Link from "next/link";
-import { Sword, Dumbbell, Gamepad2, Trophy, Target, Zap, Star, Users } from "lucide-react";
+import {
+  Sword,
+  Dumbbell,
+  Gamepad2,
+  Trophy,
+  Target,
+  Zap,
+  Star,
+  Users,
+} from "lucide-react";
 
 import Image from "next/image";
 import "./about.css";
 import NavBar from "@/components/Navigation/NavBar";
+import { currentUser } from "@clerk/nextjs/server";
 
 export default function AboutPage() {
   return (
@@ -22,13 +32,15 @@ export default function AboutPage() {
             <div className="about-tag">⚔️ Our Story</div>
             <h1 className="hero-title">
               <span className="hero-title-gradient">
-                Built by Warriors,<br />For Warriors
+                Built by Warriors,
+                <br />
+                For Warriors
               </span>
             </h1>
             <p className="hero-description">
-              We got tired of gym apps that feel like spreadsheets and games that
-              don&apos;t respect your grind. So we built something that does both —
-              properly.
+              We got tired of gym apps that feel like spreadsheets and games
+              that don&apos;t respect your grind. So we built something that
+              does both — properly.
             </p>
           </div>
         </div>
@@ -49,9 +61,9 @@ export default function AboutPage() {
               <div className="problem-icon">📊</div>
               <h3 className="problem-title">Gym Apps Are Boring</h3>
               <p className="problem-description">
-                Most workout trackers are just digital spreadsheets. Log your sets,
-                see a number go up. There&apos;s no reward, no story, no reason to
-                keep coming back beyond willpower alone.
+                Most workout trackers are just digital spreadsheets. Log your
+                sets, see a number go up. There&apos;s no reward, no story, no
+                reason to keep coming back beyond willpower alone.
               </p>
             </div>
 
@@ -70,9 +82,10 @@ export default function AboutPage() {
               <div className="problem-icon">🗓️</div>
               <h3 className="problem-title">No Real Programs</h3>
               <p className="problem-description">
-                Most apps let you log whatever you feel like. That&apos;s fine for
-                experienced lifters, but beginners need structured progressive
-                overload programs designed by people who actually know training.
+                Most apps let you log whatever you feel like. That&apos;s fine
+                for experienced lifters, but beginners need structured
+                progressive overload programs designed by people who actually
+                know training.
               </p>
             </div>
           </div>
@@ -100,22 +113,26 @@ export default function AboutPage() {
               <h3 className="vision-title">The Vision</h3>
             </div>
             <p className="vision-description">
-              Dumbbells & Dragons is designed to work as a <strong>great standalone gym app</strong> first.
-              The workout tracking, progressive overload programs, and exercise logging
-              are all built to a professional standard — something you&apos;d actually
-              want to use even if there was no game attached.
+              Dumbbells & Dragons is designed to work as a{" "}
+              <strong>great standalone gym app</strong> first. The workout
+              tracking, progressive overload programs, and exercise logging are
+              all built to a professional standard — something you&apos;d
+              actually want to use even if there was no game attached.
             </p>
             <p className="vision-description">
               Then, the gamification layer sits on top in a way that actually
-              means something. The XP you earn in the gym doesn&apos;t just fill a
-              bar — it <strong>directly powers your character</strong> in the game.
-              Your core attributes — Strength, Stamina, Vitality — can <strong>only
-              be increased by training in real life</strong>. Loot and gear can still
-              upgrade your skills, but your base stats? Those are earned in the gym.
+              means something. The XP you earn in the gym doesn&apos;t just fill
+              a bar — it <strong>directly powers your character</strong> in the
+              game. Your core attributes — Strength, Stamina, Vitality — can{" "}
+              <strong>only be increased by training in real life</strong>. Loot
+              and gear can still upgrade your skills, but your base stats? Those
+              are earned in the gym.
             </p>
             <div className="vision-callout">
               <Zap className="callout-icon" />
-              <span>Your real-world gains = your in-game power. No shortcuts.</span>
+              <span>
+                Your real-world gains = your in-game power. No shortcuts.
+              </span>
             </div>
           </div>
 
@@ -127,11 +144,26 @@ export default function AboutPage() {
                 <h3 className="solution-title">As a Gym App</h3>
               </div>
               <ul className="solution-list">
-                <li><span className="list-bullet">▸</span> Professionally designed 8-week programs</li>
-                <li><span className="list-bullet">▸</span> Built-in progressive overload across all 8 weeks</li>
-                <li><span className="list-bullet">▸</span> Rest timer, set tracking, weight logging</li>
-                <li><span className="list-bullet">▸</span> Workout notes and PR tracking</li>
-                <li><span className="list-bullet">▸</span> Programs tailored to your chosen class</li>
+                <li>
+                  <span className="list-bullet">▸</span> Professionally designed
+                  8-week programs
+                </li>
+                <li>
+                  <span className="list-bullet">▸</span> Built-in progressive
+                  overload across all 8 weeks
+                </li>
+                <li>
+                  <span className="list-bullet">▸</span> Rest timer, set
+                  tracking, weight logging
+                </li>
+                <li>
+                  <span className="list-bullet">▸</span> Workout notes and PR
+                  tracking
+                </li>
+                <li>
+                  <span className="list-bullet">▸</span> Programs tailored to
+                  your chosen class
+                </li>
               </ul>
             </div>
 
@@ -141,11 +173,26 @@ export default function AboutPage() {
                 <h3 className="solution-title">As a Game</h3>
               </div>
               <ul className="solution-list">
-                <li><span className="list-bullet">▸</span> XP earned in gym = character XP in game</li>
-                <li><span className="list-bullet">▸</span> Core attributes only increase through real training</li>
-                <li><span className="list-bullet">▸</span> Loot and items still upgrade skills</li>
-                <li><span className="list-bullet">▸</span> Your class in the gym is your class in the game</li>
-                <li><span className="list-bullet">▸</span> Level 50 in the app = genuinely powerful character</li>
+                <li>
+                  <span className="list-bullet">▸</span> XP earned in gym =
+                  character XP in game
+                </li>
+                <li>
+                  <span className="list-bullet">▸</span> Core attributes only
+                  increase through real training
+                </li>
+                <li>
+                  <span className="list-bullet">▸</span> Loot and items still
+                  upgrade skills
+                </li>
+                <li>
+                  <span className="list-bullet">▸</span> Your class in the gym
+                  is your class in the game
+                </li>
+                <li>
+                  <span className="list-bullet">▸</span> Level 50 in the app =
+                  genuinely powerful character
+                </li>
               </ul>
             </div>
           </div>
@@ -168,10 +215,10 @@ export default function AboutPage() {
               <div className="team-emoji">🏋️</div>
               <h3 className="team-role">The Personal Trainer</h3>
               <p className="team-description">
-                We have a qualified PT on the team who has used dozens of gym apps
-                professionally. They know exactly what makes a good workout log,
-                what progressive overload actually looks like in practice, and
-                what coaches and clients need from a training app.
+                We have a qualified PT on the team who has used dozens of gym
+                apps professionally. They know exactly what makes a good workout
+                log, what progressive overload actually looks like in practice,
+                and what coaches and clients need from a training app.
               </p>
               <div className="team-tag">Knows what works in the gym</div>
             </div>
@@ -180,10 +227,10 @@ export default function AboutPage() {
               <div className="team-emoji">🎮</div>
               <h3 className="team-role">The Gamers</h3>
               <p className="team-description">
-                We&apos;ve spent thousands of hours in RPGs. We know what makes a
-                levelling system feel rewarding, what makes you want to grind,
-                and what makes progression feel meaningful rather than arbitrary.
-                That knowledge is baked into every design decision.
+                We&apos;ve spent thousands of hours in RPGs. We know what makes
+                a levelling system feel rewarding, what makes you want to grind,
+                and what makes progression feel meaningful rather than
+                arbitrary. That knowledge is baked into every design decision.
               </p>
               <div className="team-tag">Knows what makes games fun</div>
             </div>
@@ -232,7 +279,9 @@ export default function AboutPage() {
               <div className="stat-block">
                 <div className="stat-number">0</div>
                 <div className="stat-label">Shortcuts</div>
-                <div className="stat-note">core stats earned in the gym only</div>
+                <div className="stat-note">
+                  core stats earned in the gym only
+                </div>
               </div>
             </div>
           </div>
@@ -240,16 +289,24 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------------------------------------------CTA------------------------------------------------- */}
+
       <section className="section section-alt">
         <div className="container">
           <div className="cta-container glass-card">
             <h2 className="cta-title">Ready to Begin Your Quest?</h2>
             <p className="cta-description">
-              Choose your class. Start your program. Build your character — for real.
+              Choose your class. Start your program. Build your character — for
+              real.
             </p>
-            <Link href="/sign-up" className="btn-primary">
-              Create Your Character - Free
-            </Link>
+            {!currentUser ? (
+              <Link href="/sign-up" className="btn-primary">
+                Create Your Character - Free
+              </Link>
+            ) : (
+              <Link href="/dashboard" className="btn-primary">
+                Return To My Journey
+              </Link>
+            )}
             <p className="cta-note">Your gains are your power. No shortcuts.</p>
           </div>
         </div>
@@ -271,25 +328,43 @@ export default function AboutPage() {
             <div className="footer-section">
               <h4 className="footer-heading">Product</h4>
               <ul className="footer-links">
-                <li><Link href="#">Features</Link></li>
-                <li><Link href="#">Classes</Link></li>
-                <li><Link href="#">Pricing</Link></li>
+                <li>
+                  <Link href="#">Features</Link>
+                </li>
+                <li>
+                  <Link href="#">Classes</Link>
+                </li>
+                <li>
+                  <Link href="#">Pricing</Link>
+                </li>
               </ul>
             </div>
             <div className="footer-section">
               <h4 className="footer-heading">Company</h4>
               <ul className="footer-links">
-                <li><Link href="/about">About</Link></li>
-                <li><Link href="#">Blog</Link></li>
-                <li><Link href="#">Careers</Link></li>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+                <li>
+                  <Link href="#">Blog</Link>
+                </li>
+                <li>
+                  <Link href="#">Careers</Link>
+                </li>
               </ul>
             </div>
             <div className="footer-section">
               <h4 className="footer-heading">Legal</h4>
               <ul className="footer-links">
-                <li><Link href="#">Privacy</Link></li>
-                <li><Link href="#">Terms</Link></li>
-                <li><Link href="#">Contact</Link></li>
+                <li>
+                  <Link href="#">Privacy</Link>
+                </li>
+                <li>
+                  <Link href="#">Terms</Link>
+                </li>
+                <li>
+                  <Link href="#">Contact</Link>
+                </li>
               </ul>
             </div>
           </div>
