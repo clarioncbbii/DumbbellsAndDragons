@@ -5,17 +5,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
 import "./workout.css";
 
-export const metadata = {
-  title: "Workouts | Complete your workout, oh champion!",
-  description:
-    "Take on your workout bravely, like a true champion and earn experience, strength, and glory in Dumbbells & Dragon.",
-  openGraph: {
-    title: "Workouts | Dumbbells & Dragon",
-    description:
-      "A fantasy fitness quest inspired by Dungeons & Dragons. Train hard and unlock your true power.",
-  },
-};
-
 export default function WorkoutLogPage() {
   const { isLoaded, userId } = useAuth();
   const router = useRouter();
