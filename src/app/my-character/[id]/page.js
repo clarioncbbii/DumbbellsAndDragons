@@ -7,6 +7,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import NavBar from "@/components/Navigation/NavBar";
 import { db } from "@/utils/dbConnection";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export const metadata = {
   title: "My character | Dumbbells & Dragon",
@@ -44,9 +45,9 @@ WHERE clerk_id = $1`,
     const { age, gender, weight, bio } = Object.fromEntries(formData);
     console.log(gender, age, weight, bio);
 
-    // insert user row
+    // UPDATE user row
     db.query(
-      `UPDATE dd_users SET gender = $1, age = $2, weight = $3, bio = $4) VALUES ($1, $2, $3, $4)`,
+      `UPDATE dd_users SET gender = $1, age = $2, weight = $3, bio = $4`,
       [gender, age, weight, bio],
     );
 
@@ -65,8 +66,6 @@ WHERE clerk_id = $1`,
             <div className={styles.section_header}>
               <h2 className={styles.section_title}> My Character</h2>
               <p className={styles.section_description}>Your story so far...</p>
-              <p>Everyone&apos;s story can be retold...</p>
-              {/* edit button here */}
             </div>
 
             <section className={styles.charSheet}>

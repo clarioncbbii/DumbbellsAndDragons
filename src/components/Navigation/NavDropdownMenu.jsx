@@ -52,8 +52,8 @@ export default function NavDropdownMenu() {
             asChild
             className="px-3 py-2 hover:bg-white/10 transition-colors rounded-md"
           >
-            <Link href={`/my-character/${user.id}`}>
-              {user.username}&apos;s character
+            <Link href={`/my-character/${user?.id}`}>
+              {user?.username}&apos;s character
             </Link>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
