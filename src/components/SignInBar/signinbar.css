@@ -10,7 +10,7 @@
 }
 
 .navbar-container {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -27,7 +27,7 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  transition: opacity 0.3s;
+  transition: opacity 300s ease-in-out;
 }
 
 .navbar-logo:hover {
@@ -98,11 +98,11 @@
   .navbar-container {
     padding: 0 0.5rem;
   }
-  
+
   .logo-text {
     font-size: 1rem;
   }
-  
+
   .btn-signup {
     padding: 0.5rem 1rem;
   }

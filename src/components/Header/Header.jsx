@@ -5,13 +5,15 @@ import NavBar from "../Navigation/NavBar";
 export default function Header() {
   return (
     <>
-      <SignedOut>
-        <SignInBar />
-      </SignedOut>
+      <header>
+        <SignedOut>
+          <SignInBar />
+        </SignedOut>
 
-      <SignedIn>
-        <NavBar />
-      </SignedIn>
+        <SignedIn>
+          <NavBar />
+        </SignedIn>
+      </header>
     </>
   );
 }

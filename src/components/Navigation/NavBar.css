@@ -8,4 +8,24 @@ nav {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(51, 65, 85, 1);
   height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-logo {
+  font-size: 1.25rem;
+  transition: opacity 300ms ease-in-out;
+}
+
+.title-logo:hover {
+  opacity: 0.8;
+}
+
+.title {
+  font-weight: 700;
+  background: linear-gradient(to right, #10b981, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

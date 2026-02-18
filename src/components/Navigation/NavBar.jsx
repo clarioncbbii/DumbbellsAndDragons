@@ -8,7 +8,9 @@ export default function NavBar() {
     <>
       <nav>
         <NavDropdownMenu />
-        <Link href={"/"}>⚔️ Dumbbells & Dragons</Link>
+        <Link className="title-logo" href={"/"}>
+          ⚔️ <span className="title">Dumbbells & Dragons</span>
+        </Link>
         <UserButton />
       </nav>
     </>
