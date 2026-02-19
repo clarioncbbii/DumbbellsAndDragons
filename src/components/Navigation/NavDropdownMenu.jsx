@@ -5,7 +5,8 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useUser } from "@clerk/nextjs";
 
 export default function NavDropdownMenu() {
-  const { user } = useUser();
+  const { user, isLoaded } = useUser();
+  if (!isLoaded || !user) return null;
 
   return (
     <>

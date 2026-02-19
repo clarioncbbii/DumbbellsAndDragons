@@ -1,9 +1,8 @@
 import Link from "next/link";
 import "./dashboard.css";
 import NavBar from "@/components/Navigation/NavBar";
-import Link from "next/link";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
   return (
     <>
       <section className="dashboard">
