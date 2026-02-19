@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
 export default function DayCard({ day }) {
+  //added this to debugg
+    console.log('Day:', day.dayName, 'Status:', day.status, 'Total XP:', day.totalXp, 'ID:', day.id);
+
   const getStatusBadge = () => {
     switch(day.status) {
       case 'completed':
