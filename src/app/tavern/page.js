@@ -5,6 +5,8 @@ import { db } from "@/utils/dbConnection";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import PostForm from "@/components/SocialPost/PostForm";
+import UserPosts from "@/components/SocialPost/UserPosts";
 
 export const metadata = {
   title: "Tavern | Dumbbells & Dragon",
@@ -15,23 +17,38 @@ export const metadata = {
     "A fantasy fitness quest inspired by Dungeons & Dragons. Train hard and unlock your true power.",
 };
 
-export default async function Tavern({ params }) {
-  const { id } = await params;
-  console.log(id);
+export default async function Tavern() {
   const user = await currentUser();
-  // console.log(user);
+  console.log(user.id);
 
-  const userQuery = (
+  // user and post query here
+  const userPostQuery = (
     await db.query(
-      `SELECT dd_users.*, dd_classes.*, dd_progression.* 
+      `SELECT dd_users.*, dd_classes.*, dd_progression.*, dd_post.* 
 FROM dd_users 
 JOIN dd_classes ON dd_users.classes_id_fk = dd_classes.id
 JOIN dd_progression ON dd_users.clerk_id = dd_progression.user_id_fk
+JOIN dd_post ON dd_users.clerk_id = dd_post.user_id_fk
 `,
     )
-  ).rows[0];
+  ).rows;
+  console.log(userPostQuery);
+  // new post
+  async function handlePost(formData) {
+    "use server";
 
-  //   have a user posts fetch here
+    const { title, content } = Object.fromEntries(formData);
+    console.log(title, content, user?.id);
+
+    db.query(
+      `INSERT INTO dd_post (post_title, post_content, user_id_fk) VALUES ($1, $2, $3)`,
+      [title, content, user?.id],
+    );
+
+    revalidatePath(`/tavern`);
+    redirect(`/tavern`);
+  }
+
   const formatter = new Intl.DateTimeFormat(`en-UK`, {
     hour: `2-digit`,
     minute: `2-digit`,
@@ -45,22 +62,25 @@ JOIN dd_progression ON dd_users.clerk_id = dd_progression.user_id_fk
           <div className={styles.container}>
             <div className={styles.section_header}>
               <h2 className={styles.section_title}> The Tavern</h2>
-
               <p className={styles.section_description}>
                 You are not alone on this journey adventurers!
               </p>
-              <p className={styles.section_description}>
-                Share tales of your journey here...
-              </p>
             </div>
+            <PostForm
+              handle={handlePost}
+              styles={styles}
+              trigger={"Share tales of your journey..."}
+              description={
+                "Your journey interests those around you, share with your fellow adventurers!"
+              }
+            />
+            <div className="h-10"></div>
+            <UserPosts
+              styles={styles}
+              userPostQuery={userPostQuery}
+              formatter={formatter}
+            />
 
-            {/* list posts here with .map and have the names linked to profile */}
-
-            {/* JUST AN EXAMPLE LINK */}
-            <Link href={`tavern/user-profile/${user?.username}`}>
-              {user?.username}
-            </Link>
-            {/* JUST AN EXAMPLE LINK */}
             <section className={styles.charSheet}></section>
           </div>
         </section>

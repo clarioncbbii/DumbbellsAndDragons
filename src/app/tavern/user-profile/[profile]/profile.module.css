@@ -67,6 +67,45 @@
   }
 }
 
+.user_form {
+  padding: 1rem;
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s;
+}
+
+.char_section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.user_profile {
+  font-size: 1.5em;
+  color: white;
+  &:hover {
+    text-shadow: #3f4680 5px 1px 10px;
+  }
+}
+.post_content {
+  margin-left: 25%;
+  padding: 1rem;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
 .user_form option {
   color: rgba(23, 25, 27, 0.723);
 }
