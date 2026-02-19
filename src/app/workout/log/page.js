@@ -1,6 +1,5 @@
-import WorkoutLogger from '@/components/WorkoutLogger/WorkoutLogger';
-import { Suspense } from 'react';
-
+import WorkoutLogger from "@/components/WorkoutLogger/WorkoutLogger";
+import { Suspense } from "react";
 
 export default function WorkoutLogPage() {
   return (
