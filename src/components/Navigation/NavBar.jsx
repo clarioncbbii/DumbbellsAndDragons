@@ -11,7 +11,7 @@ export default function NavBar() {
         <Link className="title-logo" href={"/"}>
           ⚔️ <span className="title">Dumbbells & Dragons</span>
         </Link>
-        <UserButton />
+        <UserButton className="user-button" />
       </nav>
     </>
   );
