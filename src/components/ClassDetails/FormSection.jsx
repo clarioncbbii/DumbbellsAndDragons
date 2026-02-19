@@ -5,22 +5,23 @@ import EditHover from "../EditAlert/EditHover";
 export default async function FormSection({
   styles,
   classChoice,
-  classData,
+  classQuery,
   user,
+  userQuery,
   handle,
 }) {
-  if (!user) {
-    const dbClasses = (
-      await db.query(`SELECT id FROM dd_classes WHERE class_name = ($1)`, [
-        classData[classChoice.class].name,
-      ])
-    ).rows;
-    console.log(dbClasses[0].id);
-  } else {
-    console.log("user logged in");
-    console.log(user);
-    console.log(classChoice);
-  }
+  // if (!user) {
+  //   const dbClasses = (
+  //     await db.query(`SELECT id FROM dd_classes WHERE class_name = ($1)`, [
+  //       classQuery.name,
+  //     ])
+  //   ).rows;
+  //   console.log(dbClasses[0].id);
+  // } else {
+  //   console.log("user logged in");
+  //   console.log(user);
+  //   console.log(classChoice);
+  // }
 
   // this function will have to be in the page.js for complete-character --> pass the props through
 
@@ -28,7 +29,7 @@ export default async function FormSection({
     <form className={styles.charSheet_form} action={handle}>
       <section className={styles.user_form}>
         <fieldset className="flex flex-row justify-around content-center align-middle p-4 text-center ">
-          {!classChoice.clerk_id ? (
+          {!userQuery?.clerk_id ? (
             <legend className={styles.class_showcase_name}>
               Describe Yourself To The World...
             </legend>
@@ -40,18 +41,11 @@ export default async function FormSection({
 
           <div className="flex flex-col gap-3">
             <label htmlFor="age">Age</label>
-            {!classChoice.clerk_id ? (
-              <input
-                name="age"
-                type="number"
-                min={0}
-                max={99}
-                required
-                defaultValue={classChoice?.age}
-              />
+            {!userQuery?.clerk_id ? (
+              <input name="age" type="number" min={0} max={99} required />
             ) : (
               <EditHover
-                trigger={<input disabled defaultValue={classChoice?.age} />}
+                trigger={<input disabled defaultValue={userQuery?.age} />}
               />
             )}
           </div>
@@ -60,7 +54,7 @@ export default async function FormSection({
 
           <div className="flex flex-col gap-3">
             <label htmlFor="gender">Gender</label>
-            {!classChoice.clerk_id ? (
+            {!userQuery?.clerk_id ? (
               <select
                 name="gender"
                 type="text"
@@ -76,7 +70,7 @@ export default async function FormSection({
               <>
                 <EditHover
                   trigger={
-                    <select defaultValue={classChoice.gender} disabled>
+                    <select defaultValue={userQuery.gender} disabled>
                       <option value={"female"}>Female</option>
                       <option value={"male"}>Male</option>
                       <option value={"not specified"}>Not Specified</option>
@@ -89,31 +83,30 @@ export default async function FormSection({
 
           <div className="flex flex-col gap-3">
             <label htmlFor="weight">Weight</label>
-            {!classChoice.clerk_id ? (
+            {!userQuery?.clerk_id ? (
               <input
                 className="placeholder:italic placeholder:"
                 name="weight"
                 type="number"
                 required
-                defaultValue={classChoice?.weight}
                 placeholder="         kg"
               />
             ) : (
               <EditHover
-                trigger={<input disabled defaultValue={classChoice?.weight} />}
+                trigger={<input disabled defaultValue={userQuery?.weight} />}
               />
             )}
           </div>
         </fieldset>
         <fieldset className="flex flex-col content-center align-middle gap-2 p-4">
-          {!classChoice.clerk_id ? (
+          {!userQuery?.clerk_id ? (
             <>
               <label htmlFor="bio">Tell us your story...</label>
               <textarea
                 className="placeholder:italic"
                 placeholder="Share the tale of your past and your goals on this earthly plane..."
                 name="bio"
-                defaultValue={classChoice?.bio}
+                defaultValue={userQuery?.bio}
                 required
               />
             </>
@@ -121,51 +114,39 @@ export default async function FormSection({
             <>
               <label>Your story so far...</label>
               <EditHover
-                trigger={<textarea defaultValue={classChoice?.bio} disabled />}
+                trigger={<textarea defaultValue={userQuery?.bio} disabled />}
               />
             </>
           )}
         </fieldset>
 
-        {classChoice.clerk_id ? (
-          <EditDialog
-            data={FormData}
-            classChoice={classChoice}
-            handle={handle}
-          />
+        {userQuery?.clerk_id ? (
+          <EditDialog userQuery={userQuery} handle={handle} />
         ) : null}
       </section>
 
       <div className={styles.class_card}>
         <h3 className={styles.class_showcase_name}>Class Features</h3>
-        {!classChoice.clerk_id ? (
+        {!userQuery?.clerk_id ? (
           <>
             <h4 className={styles.class_showcase_tagline}>
-              {classData[classChoice.class].details.title}
+              {classQuery.details_title}
             </h4>
-            <p className={styles.showcase_list}>
-              {classData[classChoice.class].details.tag1}
-            </p>
-            <p className={styles.showcase_list}>
-              {classData[classChoice.class].details.tag2}
-            </p>
+            <p className={styles.showcase_list}>{classQuery.details_tags[0]}</p>
+            <p className={styles.showcase_list}>{classQuery.details_tags[1]}</p>
           </>
         ) : (
           <>
             <h4 className={styles.class_showcase_tagline}>
-              {classData[classChoice.class_name].details.title}
+              {userQuery.details_title}
             </h4>
-            <p className={styles.showcase_list}>
-              {classData[classChoice.class_name].details.tag1}
-            </p>
-            <p className={styles.showcase_list}>
-              {classData[classChoice.class_name].details.tag2}
-            </p>
+            <p className={styles.showcase_list}>{userQuery.details_tags[0]}</p>
+            <p className={styles.showcase_list}>{userQuery.details_tags[1]}</p>
           </>
         )}
       </div>
 
-      {!classChoice.clerk_id ? (
+      {!userQuery?.clerk_id ? (
         <button type="submit" className={styles.btn_primary}>
           <p>Continue</p>
           <svg className="cl-buttonArrowIcon self-center h-2">

@@ -1,19 +1,29 @@
+import { db } from "@/utils/dbConnection";
 import Image from "next/image";
+import barbarian from "@/../public/barbarian.png";
 
-export default function BarbarianDetails({ styles, classData, classChoice }) {
+export default async function BarbarianDetails({ styles, classChoice }) {
+  const classQuery = (
+    await db.query(`SELECT * FROM dd_classes WHERE id = $1`, [16])
+  ).rows;
+
+  console.log(classQuery[0]);
+
   return (
     <div className={styles.class_details_showcase}>
       <div className={styles.class_showcase_header}>
         <div className={styles.class_showcase_icon}>
           <Image
-            src={classData[classChoice.class].imageSrc}
-            alt={classData[classChoice.class].imageAlt}
+            src={barbarian}
+            alt={classQuery[0].class_name}
             width={200}
             height={200}
           />
         </div>
         <div>
-          <h3 className={styles.class_showcase_name}>Barbarian</h3>
+          <h3 className={styles.class_showcase_name}>
+            {classQuery[0].class_name}
+          </h3>
           <p className={styles.class_showcase_tagline}>
             Master of Raw Strength
           </p>
@@ -22,13 +32,16 @@ export default function BarbarianDetails({ styles, classData, classChoice }) {
           <h4 className={styles.showcase_title}>Training Focus:</h4>
           <ul className={styles.showcase_list}>
             <li>
-              <span className={styles.showcase_bullet}>▸</span> Heavy Squats
+              <span className={styles.showcase_bullet}>▸</span>{" "}
+              {classQuery[0].stat_one[0]}
             </li>
             <li>
-              <span className={styles.showcase_bullet}>▸</span> Deadlifts
+              <span className={styles.showcase_bullet}>▸</span>{" "}
+              {classQuery[0].stat_two[0]}
             </li>
             <li>
-              <span className={styles.showcase_bullet}>▸</span> Bench Press
+              <span className={styles.showcase_bullet}>▸</span>{" "}
+              {classQuery[0].stat_three[0]}
             </li>
           </ul>
         </div>

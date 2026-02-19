@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@clerk/nextjs";
 import "./workout.css";
-export const dynamic = "force-dynamic";
 
+export const dynamic = "force-dynamic";
 
 export default function WorkoutLogPage() {
   const { isLoaded, userId } = useAuth();
@@ -189,8 +189,6 @@ export default function WorkoutLogPage() {
   const totalSets = sets.length;
   const completedSets = sets.filter((s) => s.completed).length;
   const isWorkoutComplete = completedSets === totalSets;
-
-  
 
   return (
     <div className="workout-log-page">

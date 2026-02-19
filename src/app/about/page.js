@@ -13,6 +13,7 @@ import {
 import Image from "next/image";
 import "./about.css";
 import NavBar from "@/components/Navigation/NavBar";
+import { currentUser } from "@clerk/nextjs/server";
 
 export const metadata = {
   title: "About Us | Dumbbells & Dragon",
@@ -314,6 +315,7 @@ export default function AboutPage() {
       </section>
 
       {/* ---------------------------------------------------CTA------------------------------------------------- */}
+
       <section className="section section-alt">
         <div className="container">
           <div className="cta-container glass-card">
@@ -322,9 +324,15 @@ export default function AboutPage() {
               Choose your class. Start your program. Build your character — for
               real.
             </p>
-            <Link href="/sign-up" className="btn-primary">
-              Create Your Character - Free
-            </Link>
+            {!currentUser ? (
+              <Link href="/sign-up" className="btn-primary">
+                Create Your Character - Free
+              </Link>
+            ) : (
+              <Link href="/dashboard" className="btn-primary">
+                Return To My Journey
+              </Link>
+            )}
             <p className="cta-note">Your gains are your power. No shortcuts.</p>
           </div>
         </div>

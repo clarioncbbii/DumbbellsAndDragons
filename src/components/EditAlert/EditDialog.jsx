@@ -2,7 +2,7 @@ import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import styles from "./EditDialogStyles.module.css";
 import formStyles from "@/app/choose-class/[class]/complete-character/complete-character.module.css";
 
-export default async function EditDialog({ classChoice, handle }) {
+export default async function EditDialog({ userQuery, handle }) {
   return (
     <AlertDialog.Root className={styles.Root}>
       <AlertDialog.Trigger asChild>
@@ -54,7 +54,7 @@ export default async function EditDialog({ classChoice, handle }) {
                       min={0}
                       max={99}
                       required
-                      defaultValue={classChoice?.age}
+                      defaultValue={userQuery?.age}
                     />{" "}
                   </div>
                   <div className="flex flex-col gap-3">
@@ -62,7 +62,7 @@ export default async function EditDialog({ classChoice, handle }) {
                     <select
                       name="gender"
                       type="text"
-                      defaultValue={classChoice?.gender}
+                      defaultValue={userQuery?.gender}
                       required
                     >
                       <option value={"female"}>Female</option>
@@ -77,7 +77,7 @@ export default async function EditDialog({ classChoice, handle }) {
                       name="weight"
                       type="number"
                       required
-                      defaultValue={classChoice?.weight}
+                      defaultValue={userQuery?.weight}
                       placeholder="         kg"
                     />
                   </div>
@@ -88,7 +88,7 @@ export default async function EditDialog({ classChoice, handle }) {
                     className="placeholder:italic"
                     placeholder="Share the tale of your past and your goals on this earthly plane..."
                     name="bio"
-                    defaultValue={classChoice?.bio}
+                    defaultValue={userQuery?.bio}
                     required
                   />
                   <button className={styles.btn_primary} type="submit">
