@@ -19,7 +19,7 @@ export default async function CompleteCharacter({ params }) {
   );
 
   console.log(userQuery);
-  if (userQuery.length != 0) {
+  if (userQuery.length = 0) {
     redirect(`/my-character/${user?.id}`);
   }
 

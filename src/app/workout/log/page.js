@@ -6,7 +6,6 @@ import { useAuth } from "@clerk/nextjs";
 import "./workout.css";
 export const dynamic = "force-dynamic";
 
-export const dynamic = 'force-dynamic';
 
 export default function WorkoutLogPage() {
   const { isLoaded, userId } = useAuth();
