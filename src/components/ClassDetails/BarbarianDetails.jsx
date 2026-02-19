@@ -33,15 +33,15 @@ export default async function BarbarianDetails({ styles, classChoice }) {
           <ul className={styles.showcase_list}>
             <li>
               <span className={styles.showcase_bullet}>▸</span>{" "}
-              {classQuery[0].stat_one[0]}
+              {classQuery[0].profs[0]}
             </li>
             <li>
               <span className={styles.showcase_bullet}>▸</span>{" "}
-              {classQuery[0].stat_two[0]}
+              {classQuery[0].profs[1]}
             </li>
             <li>
               <span className={styles.showcase_bullet}>▸</span>{" "}
-              {classQuery[0].stat_three[0]}
+              {classQuery[0].profs[2]}
             </li>
           </ul>
         </div>

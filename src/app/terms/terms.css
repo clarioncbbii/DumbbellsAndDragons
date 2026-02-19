@@ -105,3 +105,14 @@
   color: #94a3b8;
   font-size: 0.875rem;
 }
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -38,11 +38,16 @@ export default async function LandingPage({ searchParams }) {
           <div className="hero-content">
             <h1 className="hero-title">
               <span className="hero-title-gradient">
-                {" "}
-                Level Up <br />
-                Your Fitness
+                <Image
+                    src="/feature.png"
+                    alt="feature graph"
+                    width={500}
+                    height={500}
+                  />
+                  LEVEL UP YOUR FITNESS
               </span>
             </h1>
+            
             <p className="hero-description">
               Transform your workouts into an epic RPG adventure. Choose your
               class, earn XP, and watch your character grow stronger with every
