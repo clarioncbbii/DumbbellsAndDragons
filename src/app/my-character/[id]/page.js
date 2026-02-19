@@ -34,9 +34,9 @@ WHERE clerk_id = $1`,
     )
   ).rows[0];
 
-  if (!userQuery) {
-    redirect("/choose-class");
-  }
+  // if (!userQuery) {
+  //   redirect("/choose-class");
+  // }
 
   async function handleEditSubmit(formData) {
     "use server";
