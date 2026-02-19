@@ -8,9 +8,11 @@ export async function GET(request) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  // connect first before anything else
   const client = await db.connect();
 
   try {
+    // get user from db
     const userResult = await client.query(
       "SELECT classes_id_fk, prog_start_date FROM dd_users WHERE clerk_id = $1",
       [userId]
@@ -22,11 +24,11 @@ export async function GET(request) {
     const HARDCODED_USER = { classes_id_fk: 1, prog_start_date: new Date() };
     const user = userResult.rows[0] || HARDCODED_USER;
 
-    // calculate current week based on start date
     const startDate = new Date(user.prog_start_date);
     const today = new Date();
     const daysDiff = Math.floor((today - startDate) / (24 * 60 * 60 * 1000));
     const currentWeek = Math.floor(daysDiff / 7) + 1;
+    const currentDayInWeek = (daysDiff % 7) + 1; //actaully not sure how it was working without this before prayed to the machine gods on this one
 
     const programResult = await client.query(
       `SELECT p.id, p.duration_weeks, c.class_name
@@ -40,6 +42,8 @@ export async function GET(request) {
     if (!program) {
       return Response.json({ error: "No program found for this class" }, { status: 404 });
     }
+
+    
     const weeksResult = await client.query(
       `SELECT DISTINCT pw.id, pw.week_num
        FROM dd_prog_weeks pw
@@ -48,6 +52,8 @@ export async function GET(request) {
        ORDER BY pw.week_num`,
       [program.id]
     );
+
+    // get workouts for program
     const workoutsResult = await client.query(
       `SELECT 
         w.id,
@@ -64,6 +70,7 @@ export async function GET(request) {
       [program.id]
     );
 
+    // get exercises
     const exercisesResult = await client.query(
       `SELECT 
         e.*,
@@ -82,6 +89,7 @@ export async function GET(request) {
       [program.id]
     );
 
+    // structure data to match what the frontend expects
     const weeks = weeksResult.rows.map((week) => {
       const weekWorkouts = workoutsResult.rows.filter(
         (w) => w.week_num === week.week_num
@@ -109,12 +117,15 @@ export async function GET(request) {
             dayName: workout.day_num.toString(),
             workoutName: workout.workout_type,
             subtitle: workout.is_rest ? "Active Recovery Day" : "",
+            // calculate status based on program start date
             status: workout.is_rest
               ? "rest"
-              : workout.day_num === new Date().getDay() &&
-                  week.week_num === currentWeek
+              : week.week_num === currentWeek && workout.day_num === currentDayInWeek
                 ? "today"
-                : "upcoming",
+                : week.week_num < currentWeek || 
+                  (week.week_num === currentWeek && workout.day_num < currentDayInWeek)
+                  ? "completed"
+                  : "upcoming",
             exercises: workoutExercises,
             totalXp: totalXp,
             restMessage: workout.is_rest
@@ -140,7 +151,7 @@ export async function GET(request) {
 
   } catch (error) {
     console.error("Database error:", error.message);
-    console.error("Full error:", error); // remove before production
+    console.error("Full error:", error); // TODO: -----> remove before production
     return Response.json(
       { error: "Failed to fetch program", details: error.message },
       { status: 500 }
