@@ -33,7 +33,7 @@ export default async function UserPosts({
   return (
     <>
       {userPostQuery?.map((post) => (
-        <div className={styles.user_form} key={post.id}>
+        <div className={styles.user_form} key={post.post_id}>
           <section className={styles.char_section}>
             {" "}
             <Link
