@@ -443,7 +443,7 @@ export default async function LandingPage({ searchParams }) {
                   <Link href="/terms">Terms</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link href="/contact-us">Contact us</Link>
                 </li>
               </ul>
             </div>

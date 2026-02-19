@@ -35,7 +35,7 @@ export default function ContactPage() {
     <main className="contact-wrapper">
       <div className="contact-card">
         <strong>
-          <h1 className="contact-title">CONTACT US</h1>
+          <h1 className="contact-title">CONTACT THE GUILD ⚔️</h1>
         </strong>
 
         <p className="contact-description">
@@ -46,30 +46,30 @@ export default function ContactPage() {
 
         <div className="contact-details">
           <p>
-            <strong>Email:</strong>
-            <Link href="mailto:support@dumbbellsanddragon.com">
-              support@dumbbellsanddragons.com
+            <strong>📧 Email: </strong>
+            <Link href="mailto:dumbbells_and_dragons@protonmail.com">
+              dumbbells_and_dragons@protonmail.com
             </Link>
           </p>
           <p>
-            <strong>Phone:</strong>
+            <strong>📞 Phone: </strong>
             <Link href="tel:+441234567890">+44 1234 567 890</Link>
           </p>
         </div>
 
         <form className="contact-form">
           <div className="form-group">
-            <label>Name</label>
+            <label>Your name</label>
             <input type="text" placeholder="Your name" required />
           </div>
 
           <div className="form-group">
-            <label>Email</label>
+            <label>Your email</label>
             <input type="email" placeholder="you@example.com" required />
           </div>
 
           <div className="form-group">
-            <label>Message</label>
+            <label>Your message</label>
             <textarea
               placeholder="Tell us what's going on…"
               rows="5"
