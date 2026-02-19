@@ -11,7 +11,7 @@ import { revalidatePath } from "next/cache";
 export const metadata = {
   title: "My character | Dumbbells & Dragon",
   description:
-    "Channel your inner Wizard, Mage, Barbarian ... you name it, we got it! Dumbbells & Dragon allows you to live your fitness character fantasy. Unique abilities, workout styles, and progression paths await.",
+    "Channel your inner Barbarian, Rogue, Paladin...you name it, we got it! Dumbbells & Dragon allows you to live your fitness character fantasy. Unique abilities, workout styles, and progression paths await.",
   title: "My character | Dumbbells & Dragon",
   description:
     "A fantasy fitness quest inspired by Dungeons & Dragons. Train hard and unlock your true power.",
