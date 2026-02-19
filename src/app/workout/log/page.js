@@ -23,7 +23,7 @@ export default function WorkoutLogPage() {
 
   const loadWorkout = useCallback(async () => {
     try {
-      const response = await fetch("/api/program");
+      const response = await fetch("../api/program");
       const data = await response.json();
 
       if (data.error) {
@@ -136,7 +136,7 @@ export default function WorkoutLogPage() {
     }
 
     try {
-      const response = await fetch("/api/workouts/complete", {
+      const response = await fetch("../api/workouts/complete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
