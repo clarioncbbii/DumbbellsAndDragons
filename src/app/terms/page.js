@@ -1,3 +1,5 @@
+import Link from "next/link";
+import SignInBar from "@/components/SignInBar/SignInBar";
 import "./terms.css";
 
 export const metadata = {
@@ -28,6 +30,7 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
+    <><SignInBar />
     <main className="legal-wrapper">
       <div className="legal-card">
         <strong>
@@ -89,6 +92,69 @@ export default function TermsPage() {
           </p>
         </i>
       </div>
-    </main>
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-grid">
+            <div className="footer-brand">
+              <div className="footer-logo">
+                <div className="footer-logo-icon">⚔️</div>
+                <span className="footer-logo-text">Dumbbells & Dragons</span>
+              </div>
+              <p className="footer-tagline">
+                Level up your fitness with RPG mechanics
+              </p>
+            </div>
+            <div className="footer-section">
+              <h4 className="footer-heading">Product</h4>
+              <ul className="footer-links">
+                <li>
+                  <Link href="#">Features</Link>
+                </li>
+                <li>
+                  <Link href="#">Classes</Link>
+                </li>
+                <li>
+                  <Link href="#">Pricing</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-section">
+              <h4 className="footer-heading">Company</h4>
+              <ul className="footer-links">
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+                <li>
+                  <Link href="#">Blog</Link>
+                </li>
+                <li>
+                  <Link href="#">Careers</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-section">
+              <h4 className="footer-heading">Legal</h4>
+              <ul className="footer-links">
+                <li>
+                  <Link href="/privacy">Privacy</Link>
+                </li>
+                <li>
+                  <Link href="/terms">Terms</Link>
+                </li>
+                <li>
+                  <Link href="/contact-us">Contact us</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>
+              &copy; 2026 Dumbbells & Dragons. All rights reserved. Built by
+              warriors, for warriors.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main></>
   );
 }

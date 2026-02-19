@@ -118,9 +118,9 @@ export default function ProgramPage() {
   const currentWeek = getWeek(program, currentWeekNum);
 
   return (
-    
+    <><NavBar />
     <div className="program-page">
-      <NavBar />
+      
 
       <ProgramHeader
         title="Your Training Program"
@@ -145,5 +145,6 @@ export default function ProgramPage() {
           currentWeek.days.map((day) => <DayCard key={day.id} day={day} />)}
       </div>
     </div>
+    </>
   );
 }
