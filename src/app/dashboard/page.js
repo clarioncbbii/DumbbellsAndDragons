@@ -13,40 +13,46 @@ export const metadata = {
   },
 };
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const res = await fetch("http://localhost:3000/api/dashboard/today-workout", {
+    cache: "no-store",
+  });
+
+  const data = await res.json();
+
   return (
     <>
       <section className="dashboard">
         <NavBar />
         <div className="dashboard-title-div">
-          <h2>Welcome back, Bob! 💪</h2>
+          <h2>Welcome back, {data.username}! 💪</h2>
           <h3>Ready to continue your quest?</h3>
         </div>
 
         <section className="sections-container">
           <section className="class-stats-section">
             <div className="stats-title">
-              <h3>🪓 Bob the Barbarian</h3>
-              <p>Barbarian - Powerbuilding Path</p>
+              <h3>🪓 {data.username}</h3>
+              <p>{data.classInfo}</p>
             </div>
 
-            <div className="xp-div">
+            {/*<div className="xp-div">
               <p>XP Progress</p>
               <p className="xp-number">500/1200</p>
-            </div>
+            </div> */}
 
             <div className="individual-stats">
               <div className="character-stat">
-                <p className="stat-type">💪 Strength</p>
-                <p className="stat-value">88</p>
+                <p className="stat-type">💪 {data.stats[0].name}</p>
+                <p className="stat-value">{data.stats[0].value}</p>
               </div>
               <div className="character-stat">
-                <p className="stat-type">🏃 Stamina</p>
-                <p className="stat-value">18</p>
+                <p className="stat-type">🏃 {data.stats[1].name}</p>
+                <p className="stat-value">{data.stats[1].value}</p>
               </div>
               <div className="character-stat">
-                <p className="stat-type">❤️ Vitality</p>
-                <p className="stat-value">200</p>
+                <p className="stat-type">❤️ {data.stats[2].name}</p>
+                <p className="stat-value">{data.stats[2].value}</p>
               </div>
             </div>
           </section>
