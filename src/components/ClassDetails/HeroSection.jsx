@@ -48,7 +48,7 @@ export default function HeroSection({
       </div>
 
       <div className={styles.name_block}>
-        {!userQuery.username ? (
+        {!userQuery?.username ? (
           <h3 className={styles.character_name}>
             {user?.username.toUpperCase()}
           </h3>

@@ -18,16 +18,18 @@ export default async function PostForm({
         <Dialog.Overlay className={styles.form_overlay} />
         <Dialog.Content className={styles.Content}>
           <Dialog.Title className={styles.section_title}>
-            {trigger}{" "}
+            {trigger}
           </Dialog.Title>
 
           {prefill ? (
-            <Dialog.Description className={styles.section_description}>
+            <Dialog.Description className={styles.Description}>
               You posted at: {formattedTime} {formattedDate}
             </Dialog.Description>
           ) : null}
 
-          <Dialog.Description>{description} </Dialog.Description>
+          <Dialog.Description className={styles.Description}>
+            {description}
+          </Dialog.Description>
           <form className={styles.user_form} action={handle}>
             <fieldset>
               <div>
@@ -41,14 +43,14 @@ export default async function PostForm({
               <label htmlFor="title"> Post Title: </label>
               <input
                 name="title"
-                placeholder="Shout into the empty room..."
+                placeholder="Name your tale..."
                 defaultValue={prefill?.post_content}
               />
 
               <label htmlFor="content"> Post Content: </label>
-              <input
+              <textarea
                 name="content"
-                placeholder="Shout into the empty room..."
+                placeholder="Go on adventurer, share..."
                 defaultValue={prefill?.post_content}
               />
             </fieldset>
@@ -65,7 +67,10 @@ export default async function PostForm({
               </button>
             </div>
           </form>
-          {/* <DeleteDialog styles={styles} post={prefill} username={username} /> */}
+          {prefill ? (
+            <DeleteDialog styles={styles} post={prefill} username={username} />
+          ) : null}
+
           <Dialog.Close asChild>
             <button className={styles.btn_secondary} aria-label="Close">
               Cancel
