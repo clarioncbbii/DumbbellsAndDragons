@@ -15,6 +15,7 @@ export const metadata = {
 };
 
 export default async function DashboardPage() {
+    const user = await currentUser();
   const userPostQuery = (
     await db.query(
       `SELECT dd_users.*, dd_classes.*, dd_progression.*, dd_post.* 
@@ -32,14 +33,14 @@ export default async function DashboardPage() {
       <section className="dashboard">
         <NavBar />
         <div className="dashboard-title-div">
-          <h2>Welcome back, {userPostQuery[0].username}! 💪</h2>
+            <h2>Welcome back, {user?.username}! 💪</h2>
           <h3>Ready to continue your quest?</h3>
         </div>
 
         <section className="sections-container">
           <section className="class-stats-section">
             <div className="stats-title">
-              <h3>{userPostQuery[0].username}</h3>
+          <h3>{user?.username}</h3>
               <p>{userPostQuery[0].class_name} - Powerbuilding Path</p>
             </div>
 
