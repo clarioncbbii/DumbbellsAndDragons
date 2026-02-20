@@ -371,3 +371,14 @@ Mostly due to complex SQL queries taking longer than anticipated to get working,
 - The better part of day 3 was a loss for me after system issues caused a blue screen of death to rear its head and take all my coding for that day with - this put me on the back foot on day 4 but I caught up nonetheless
 - Working with familiar tools such as Trello, DrawSQL, Supabase, Clerk and Next.js helped greatly in keeping me engaged - I did have to revise many-to-many DB relationships which also ate into time but was much needed
 - On a more personal note, I can say that it was probably one of the most challenging things I have done in recent history. The entire course culminating in this project was a fantastic end to a mad ride and I could not have asked for a better team than the one we forged together. Smooth communciation, minimal conflict, well-organised project management, on mission and overall a professionally executed project. I am proud of what we have achieved!
+
+**Annabel**
+We really started out strong with a great idea from Rory and a great amount of organisation from Nene for planning and keeping us on task. Our discussions were fluid and the discord server that I created for the group (something that I thought would be useful and therefore proud of) allowed for easy communication in text, planning, admin details, and also if we wanted to hop into the different voice channels to work in pairs or practice mob development. 
+
+Everything was moving forward delightfully but as our planning progressed, we found ourselves at loggerheads with the sql tables. Some of us went to research for missing information which was the best idea as we were able to finalise that afterwards. I saw a great use amount of development from Dylan, who worked on a lot of SQL queries and really showed some impressive skills in backend work.
+
+This was the most complex database that I have ever used throughout the course and I think without Rory this would not have been as fluid in practice as it turned out to be. I must say that handling the SQL queries for this project was a feat that definitely felt as if it aged me... as by the end of the project, I had to rush some things because of the code lock. Some technical issues saw me struggling to complete a bit of code to test; we were not able to review a couple pages which ended up having some SQL typos.
+
+This whole experience was a brilliant learning opportunity, other than learning from my colleagues, I was able to learn from my own mistakes and learn new skills such as completing a conflict review in the command line, which was something that I hadn't previously completed.  
+
+There are definitely more things that I would want to add but the core and stretch features that I was most committed to were completed; I would have just preffered time to clean up some styling.
